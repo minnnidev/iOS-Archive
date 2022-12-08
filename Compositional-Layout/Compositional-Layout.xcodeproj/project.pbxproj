@@ -99,8 +99,7 @@
 		AB3C87A32941AEBB002260B8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				AB3C878F2941AE59002260B8 /* ListViewController.swift */,
-				AB3C87AA2941B48B002260B8 /* ListCollectionViewCell.swift */,
+				AB3C87B42941C455002260B8 /* List */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -121,6 +120,15 @@
 				AB3C87B22941C3FE002260B8 /* UIStackView+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		AB3C87B42941C455002260B8 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C878F2941AE59002260B8 /* ListViewController.swift */,
+				AB3C87AA2941B48B002260B8 /* ListCollectionViewCell.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
