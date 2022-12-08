@@ -28,6 +28,7 @@ class GridViewController: UIViewController {
     
     private lazy var gridCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        collectionView.backgroundColor = .yellow
         
         return collectionView
     }()
