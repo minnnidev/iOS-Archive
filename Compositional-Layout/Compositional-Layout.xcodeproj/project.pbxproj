@@ -19,6 +19,8 @@
 		AB3C87AF2941C3DF002260B8 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3C87AE2941C3DF002260B8 /* UIView+.swift */; };
 		AB3C87B12941C3EE002260B8 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3C87B02941C3EE002260B8 /* UIColor+.swift */; };
 		AB3C87B32941C3FE002260B8 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3C87B22941C3FE002260B8 /* UIStackView+.swift */; };
+		AB3C87B72941C53D002260B8 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3C87B62941C53D002260B8 /* GridViewController.swift */; };
+		AB3C87B92941C8BE002260B8 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3C87B82941C8BE002260B8 /* GridCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		AB3C87AE2941C3DF002260B8 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		AB3C87B02941C3EE002260B8 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		AB3C87B22941C3FE002260B8 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		AB3C87B62941C53D002260B8 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		AB3C87B82941C8BE002260B8 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				AB3C87B42941C455002260B8 /* List */,
+				AB3C87B52941C522002260B8 /* Grid */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -129,6 +134,15 @@
 				AB3C87AA2941B48B002260B8 /* ListCollectionViewCell.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		AB3C87B52941C522002260B8 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C87B62941C53D002260B8 /* GridViewController.swift */,
+				AB3C87B82941C8BE002260B8 /* GridCollectionViewCell.swift */,
+			);
+			path = Grid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3C87B72941C53D002260B8 /* GridViewController.swift in Sources */,
 				AB3C87B32941C3FE002260B8 /* UIStackView+.swift in Sources */,
 				AB3C87902941AE59002260B8 /* ListViewController.swift in Sources */,
+				AB3C87B92941C8BE002260B8 /* GridCollectionViewCell.swift in Sources */,
 				AB3C878C2941AE59002260B8 /* AppDelegate.swift in Sources */,
 				AB3C87AB2941B48B002260B8 /* ListCollectionViewCell.swift in Sources */,
 				AB3C878E2941AE59002260B8 /* SceneDelegate.swift in Sources */,
