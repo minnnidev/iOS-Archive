@@ -59,6 +59,6 @@ extension ListCollectionViewCell {
     // MARK: - Config
     
     private func config() {
-        contentView.backgroundColor = .clear
+        contentView.backgroundColor = .systemGray5
     }
 }
