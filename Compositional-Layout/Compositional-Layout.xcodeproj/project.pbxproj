@@ -21,6 +21,7 @@
 		AB3C87B32941C3FE002260B8 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3C87B22941C3FE002260B8 /* UIStackView+.swift */; };
 		AB3C87B72941C53D002260B8 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3C87B62941C53D002260B8 /* GridViewController.swift */; };
 		AB3C87B92941C8BE002260B8 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3C87B82941C8BE002260B8 /* GridCollectionViewCell.swift */; };
+		AB9103BB2946F02B00FD761A /* DistinctSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9103BA2946F02B00FD761A /* DistinctSectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		AB3C87B22941C3FE002260B8 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		AB3C87B62941C53D002260B8 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		AB3C87B82941C8BE002260B8 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB9103BA2946F02B00FD761A /* DistinctSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistinctSectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				AB3C87B42941C455002260B8 /* List */,
 				AB3C87B52941C522002260B8 /* Grid */,
+				AB9103B92946EFFD00FD761A /* DistinctSection */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -143,6 +146,14 @@
 				AB3C87B82941C8BE002260B8 /* GridCollectionViewCell.swift */,
 			);
 			path = Grid;
+			sourceTree = "<group>";
+		};
+		AB9103B92946EFFD00FD761A /* DistinctSection */ = {
+			isa = PBXGroup;
+			children = (
+				AB9103BA2946F02B00FD761A /* DistinctSectionViewController.swift */,
+			);
+			path = DistinctSection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 				AB3C87AB2941B48B002260B8 /* ListCollectionViewCell.swift in Sources */,
 				AB3C878E2941AE59002260B8 /* SceneDelegate.swift in Sources */,
 				AB3C87AF2941C3DF002260B8 /* UIView+.swift in Sources */,
+				AB9103BB2946F02B00FD761A /* DistinctSectionViewController.swift in Sources */,
 				AB3C87B12941C3EE002260B8 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
