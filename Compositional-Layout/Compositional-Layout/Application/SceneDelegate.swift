@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             window.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
             
-            let rootVC = GridViewController()
+            let rootVC = DistinctSectionViewController()
             
             window.rootViewController = rootVC
             window.makeKeyAndVisible()
