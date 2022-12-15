@@ -13,6 +13,7 @@ import Then
 // MARK: - DistinctSectionViewController
 
 class DistinctSectionViewController: UIViewController {
+
     
     // MARK: - Enum
     
@@ -31,9 +32,18 @@ class DistinctSectionViewController: UIViewController {
         }
     }
     
+    enum Item: Hashable {
+        case list(ListModel)
+        case grid(GridModel)
+    }
+    
+    // MARK: - Typealias
+    
+    typealias DataSource = UICollectionViewDiffableDataSource<SectionLayoutKind, Item>
+    
     // MARK: - Variable
     
-    var dataSource: UICollectionViewDiffableDataSource<SectionLayoutKind, Int>! = nil
+    var dataSource: DataSource! = nil
     
     // MARK: - UI Component
     
@@ -65,32 +75,32 @@ extension DistinctSectionViewController {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
             guard let sectionLayoutKind = SectionLayoutKind(rawValue: sectionIndex) else {return nil}
-//           print(sectionLayoutKind)
+            print(sectionLayoutKind)
             let columns = sectionLayoutKind.columnInt
-//          print(columns)
+            print(columns)
             
             var itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                heightDimension: .fractionalHeight(1.0))
+                                                  heightDimension: .fractionalHeight(1.0))
             if columns == 5 {
                 itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
-                                       heightDimension: .fractionalHeight(1.0))
+                                                  heightDimension: .fractionalHeight(1.0))
             } else if columns == 2 {
                 itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
-                                       heightDimension: .fractionalHeight(1.0))
+                                                  heightDimension: .fractionalHeight(1.0))
             }
-        
+            
             
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
             
             let groupHeight = columns == 1 ?
-                NSCollectionLayoutDimension.absolute(44) :
-                NSCollectionLayoutDimension.fractionalWidth(0.2)
+            NSCollectionLayoutDimension.absolute(44) :
+            NSCollectionLayoutDimension.fractionalWidth(0.2)
             
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: groupHeight)
+                                                   heightDimension: groupHeight)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: columns)
- 
+            
             let section = NSCollectionLayoutSection(group: group)
             
             return section
@@ -117,31 +127,40 @@ extension DistinctSectionViewController {
     private func config() {
         view.backgroundColor = .white
         
-        let listCellRegisteration = UICollectionView.CellRegistration<ListCollectionViewCell, Int> { cell, indexPath, itemIdentifier in
-            cell.dataBind(text: "\(itemIdentifier)")
+        let listCellRegisteration = UICollectionView.CellRegistration<ListCollectionViewCell, Item> { cell, indexPath, itemIdentifier in
+            if case let Item.list(item) = itemIdentifier {
+                cell.dataBind(text: item.name)
+            }
         }
         
-        let gridCellRegisteration = UICollectionView.CellRegistration<GridCollectionViewCell, Int> { cell, indexPath, itemIdentifier in
-            cell.nameLabel.text = "\(itemIdentifier)"
+        let gridCellRegisteration = UICollectionView.CellRegistration<GridCollectionViewCell, Item> { cell, indexPath, itemIdentifier in
+            
+            if case let Item.grid(item) = itemIdentifier {
+                cell.nameLabel.text = item.name
+            }
         }
+
         
-        dataSource = UICollectionViewDiffableDataSource(collectionView: distinctCollectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
-            switch SectionLayoutKind(rawValue: indexPath.section) {
+        dataSource = DataSource(collectionView: distinctCollectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            let section = SectionLayoutKind(rawValue: indexPath.section)
+            
+            switch section {
             case .list:
                 return collectionView.dequeueConfiguredReusableCell(using: listCellRegisteration, for: indexPath, item: itemIdentifier)
-            default:
+            case .grid1:
                 return collectionView.dequeueConfiguredReusableCell(using: gridCellRegisteration, for: indexPath, item: itemIdentifier)
+            case .grid2:
+                return collectionView.dequeueConfiguredReusableCell(using: gridCellRegisteration, for: indexPath, item: itemIdentifier)
+            default:
+                return UICollectionViewCell()
             }
         })
         
-        let itemsPerSection = 10
-        var snapshot = NSDiffableDataSourceSnapshot<SectionLayoutKind, Int>()
-        SectionLayoutKind.allCases.forEach {
-            snapshot.appendSections([$0])
-            let itemOffset = $0.rawValue * itemsPerSection
-            let itemUpperbound = itemOffset + itemsPerSection
-            snapshot.appendItems(Array(itemOffset..<itemUpperbound))
-        }
+        var snapshot = NSDiffableDataSourceSnapshot<SectionLayoutKind,Item>()
+        snapshot.appendSections([.list, .grid1, .grid2])
+        _ = listData.map { snapshot.appendItems([.list($0)], toSection: .list) }
+        _ = gridOneData.map { snapshot.appendItems([.grid($0)], toSection: .grid1) }
+        _ = gridTwoData.map { snapshot.appendItems([.grid($0)], toSection: .grid2) }
         dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
