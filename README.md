@@ -6,7 +6,6 @@
 1. [Compositional Layout](#compositional-layout)
 
 </br>
-</br>
 
 ## Compositional Layout
   
@@ -18,7 +17,8 @@
   |설명|바로가기|
   |---|---|
   |List 만들어 보기|[👩🏻‍💻 코드](https://github.com/minnnidev/iOS-Archive/tree/main/Compositional-Layout/Compositional-Layout/Presentation/List)|
-  |Grid 만들어 보기|[👩🏻‍💻 코드](https://github.com/minnnidev/iOS-Archive/tree/main/Compositional-Layout/Compositional-Layout/Presentation/Grid) [✏️ 정리](https://velog.io/@vvkkiie/iOSSwift-Compositional-Layout-Grid)|
+  |Grid 만들어 보기|[👩🏻‍💻 코드](https://github.com/minnnidev/iOS-Archive/tree/main/Compositional-Layout/Compositional-Layout/Presentation/Grid) [🔖 블로그](https://velog.io/@vvkkiie/iOSSwift-Compositional-Layout-Grid)|
   |Nested Group 만들어 보기|[👩🏻‍💻 코드](https://github.com/minnnidev/iOS-Archive/tree/main/Compositional-Layout/Compositional-Layout/Presentation/NestedGroup)|
   |Orthogonal Scroll 적용해 보기|[👩🏻‍💻 코드](https://github.com/minnnidev/iOS-Archive/tree/main/Compositional-Layout/Compositional-Layout/Presentation/OrthogonalScroll)|
+  |마켓컬리 검색 뷰 만들어 보기|[👩🏻‍💻 코드](https://github.com/SOPT-31th-Youtube-Music/Kurly-Minho/tree/develop/Kurly/Kurly/Presentation/Search)|
  
