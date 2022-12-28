@@ -4,6 +4,7 @@
 ## 목차
 
 1. [Compositional Layout](#compositional-layout)
+2. [Launch Screen](#launch-screen)
 
 </br>
 
@@ -22,3 +23,12 @@
   |Orthogonal Scroll 적용해 보기|[👩🏻‍💻 코드](https://github.com/minnnidev/iOS-Archive/tree/main/Compositional-Layout/Compositional-Layout/Presentation/OrthogonalScroll)|
   |마켓컬리 검색 뷰 만들어 보기|[👩🏻‍💻 코드](https://github.com/SOPT-31th-Youtube-Music/Kurly-Minho/tree/develop/Kurly/Kurly/Presentation/Search)|
  
+</br>
+
+## Launch Screen
+
+  </br>
+  
+  |설명|바로가기|
+  |---|---|
+  |Launch Screen 설정|[👩🏻‍💻 코드](https://github.com/minnnidev/Mini-iOS-Lab/tree/main/Launch-Screen)[🔖 블로그](https://velog.io/@vvkkiie/iOSSwift-Launch-Screen-설정하기)|
