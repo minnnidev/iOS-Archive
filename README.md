@@ -8,6 +8,8 @@
 [WWDC19 - Advances in Collection View Layout 톺아보기](https://velog.io/@vvkkiie/WWDC-19-Advances-in-Collection-View-Layout) 
 </br>
 [WWDC19 - Advances in UI DataSources 톺아보기](https://velog.io/@vvkkiie/WWDC-19-Advances-in-UI-DataSources)
+</br>
+[WWDC 21 - ARC in Swift: Basics and beyond](https://velog.io/@vvkkiie/WWDC21-ARC-in-Swift-Basics-and-beyond)
   
 </br>
 
