@@ -74,7 +74,6 @@ extension ViewController {
     // MARK: - @objc Methods
     
     @objc private func keyboardWillShow(notification: Notification) {
-        print(notification.userInfo)
         guard let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect) else { return }
         let height = keyboardFrame.size.height - view.safeAreaInsets.bottom
         bottomView.snp.updateConstraints {
