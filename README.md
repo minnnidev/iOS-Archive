@@ -34,3 +34,5 @@
 [프로퍼티](https://picturesque-egret-903.notion.site/672e496f7e714f2aa65f1132bad43cf5)
 </br>
 [초기화](https://picturesque-egret-903.notion.site/db0cf002cadc44cf82283a21eff2c9c5)
+</br>
+[초기화 해제](https://www.notion.so/884fe680bea6492eb980c35acaa1ba9a?pvs=4)
