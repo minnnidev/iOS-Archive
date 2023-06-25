@@ -55,7 +55,10 @@ extension ViewController {
     }
 
     private func configureRefreshControl() {
-        tableView.refreshControl = UIRefreshControl()
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .blue
+        refreshControl.attributedTitle = NSAttributedString("새로고침을 해 보자!")
+        tableView.refreshControl = refreshControl
         tableView.refreshControl?.addTarget(self,
                                             action: #selector(handleRefreshControl),
                                             for: .valueChanged)
