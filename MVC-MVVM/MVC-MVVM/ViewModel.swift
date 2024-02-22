@@ -6,17 +6,16 @@
 //
 
 import Foundation
+import RxSwift
+import RxRelay
 
 // model을 view에 보여질 형태로 변경하는 로직이 추가됨
 class ViewModel {
-
-    // 실제로 화면에서 보여줘야 할 값은 dateTime뿐
-    var dateTime: String = "Loading..." {
-        didSet {
-            onUpdated()
-        }
-    }
+    
     var onUpdated: () -> () = {}
+    var dateTime = BehaviorRelay(value: "Loading...")
+
+
     let service = Service()
 
     func dateToString(date: Date) -> String {
@@ -30,12 +29,13 @@ class ViewModel {
         service.fetchNow { [weak self] model in
             guard let self = self else { return }
             let dateString = self.dateToString(date: model.currentDateTime)
-            self.dateTime = dateString
+            self.dateTime.accept(dateString)
         }
     }
 
     func moveDay(_ day: Int) {
         service.moveDay(day: day)
-        dateTime = dateToString(date: service.currentTimeModel.currentDateTime)
+        let dateString = dateToString(date: service.currentTimeModel.currentDateTime)
+        self.dateTime.accept(dateString)
     }
 }

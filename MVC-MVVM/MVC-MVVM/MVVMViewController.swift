@@ -6,23 +6,31 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class MVVMViewController: UIViewController {
+
     private let timeView = TimeView()
 
-    // MARK: - Properties
     let viewModel = ViewModel()
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addTargets()
+//
+//        viewModel.dateTime
+//            .observe(on: MainScheduler.instance)
+//            .subscribe { [weak self] in
+//                self?.timeView.dateTimeLabel.text = $0
+//            }
+//            .disposed(by: disposeBag)
 
-        viewModel.onUpdated = { [weak self] in
-            DispatchQueue.main.async {
-                self?.timeView.dateTimeLabel.text = self?.viewModel.dateTime
-            }
-        }
+        viewModel.dateTime
+            .bind(to: timeView.dateTimeLabel.rx.text)
+            .disposed(by: disposeBag)
 
         viewModel.loadCurrentTime()
     }
@@ -52,7 +60,6 @@ class MVVMViewController: UIViewController {
     }
 
     @objc private func tappedNowButton() {
-        viewModel.dateTime = "Loading..."
         viewModel.loadCurrentTime()
     }
 
