@@ -59,7 +59,7 @@ class MVCViewController: UIViewController {
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm'Z'"
 
             // model의 currentDateTime을 변환
-            guard let now = formatter.date(from: model.currentDateTime) else { return }
+            guard let now = formatter.date(from: model.utcDatetime) else { return }
 
             self?.currentDateTime = now
 
@@ -96,22 +96,3 @@ class MVCViewController: UIViewController {
         updateDateTime()
     }
 }
-
-// MARK: - Model
-struct UtcTimeModel: Codable {
-    let id: String
-    let currentDateTime: String
-    let utcOffset: String
-    let isDayLightSavingsTime: Bool
-    let dayOfTheWeek: String
-    let timeZoneName: String
-    let currentFileTime: Int
-    let ordinalDate: String
-    let serviceResponse: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id = "$id"
-        case currentDateTime, utcOffset, isDayLightSavingsTime, dayOfTheWeek, timeZoneName, currentFileTime, ordinalDate, serviceResponse
-    }
-}
-

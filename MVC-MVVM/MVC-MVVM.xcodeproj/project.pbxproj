@@ -16,6 +16,12 @@
 		ABC04ACC2B8477DD00DD07A8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = ABC04ACB2B8477DD00DD07A8 /* SnapKit-Dynamic */; };
 		ABC04ACF2B8477EA00DD07A8 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = ABC04ACE2B8477EA00DD07A8 /* Then */; };
 		ABC04AD32B8478DB00DD07A8 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC04AD22B8478DB00DD07A8 /* TimeView.swift */; };
+		ABC04AD52B848B4200DD07A8 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC04AD42B848B4200DD07A8 /* Entity.swift */; };
+		ABC04AD72B848BE200DD07A8 /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC04AD62B848BE200DD07A8 /* MVVMViewController.swift */; };
+		ABC04AD92B848C3700DD07A8 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC04AD82B848C3700DD07A8 /* Repository.swift */; };
+		ABC04ADB2B848E0A00DD07A8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC04ADA2B848E0A00DD07A8 /* Model.swift */; };
+		ABC04ADD2B848ED800DD07A8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC04ADC2B848ED800DD07A8 /* Service.swift */; };
+		ABC04ADF2B848FA700DD07A8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC04ADE2B848FA700DD07A8 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +33,12 @@
 		ABC04ABE2B8476F200DD07A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABC04AC42B84776300DD07A8 /* MVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCViewController.swift; sourceTree = "<group>"; };
 		ABC04AD22B8478DB00DD07A8 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		ABC04AD42B848B4200DD07A8 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		ABC04AD62B848BE200DD07A8 /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
+		ABC04AD82B848C3700DD07A8 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		ABC04ADA2B848E0A00DD07A8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		ABC04ADC2B848ED800DD07A8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		ABC04ADE2B848FA700DD07A8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB3B0EF82B87186C006F88E9 /* Prev */ = {
+			isa = PBXGroup;
+			children = (
+				ABC04AC42B84776300DD07A8 /* MVCViewController.swift */,
+			);
+			path = Prev;
+			sourceTree = "<group>";
+		};
 		ABC04AA42B8476F000DD07A8 = {
 			isa = PBXGroup;
 			children = (
@@ -64,9 +84,15 @@
 			children = (
 				ABC04AC62B84777C00DD07A8 /* App */,
 				ABC04AC72B84779000DD07A8 /* Resources */,
+				AB3B0EF82B87186C006F88E9 /* Prev */,
 				ABC04ABE2B8476F200DD07A8 /* Info.plist */,
-				ABC04AC42B84776300DD07A8 /* MVCViewController.swift */,
 				ABC04AD22B8478DB00DD07A8 /* TimeView.swift */,
+				ABC04AD42B848B4200DD07A8 /* Entity.swift */,
+				ABC04AD62B848BE200DD07A8 /* MVVMViewController.swift */,
+				ABC04AD82B848C3700DD07A8 /* Repository.swift */,
+				ABC04ADA2B848E0A00DD07A8 /* Model.swift */,
+				ABC04ADC2B848ED800DD07A8 /* Service.swift */,
+				ABC04ADE2B848FA700DD07A8 /* ViewModel.swift */,
 			);
 			path = "MVC-MVVM";
 			sourceTree = "<group>";
@@ -168,10 +194,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC04ADF2B848FA700DD07A8 /* ViewModel.swift in Sources */,
+				ABC04AD92B848C3700DD07A8 /* Repository.swift in Sources */,
+				ABC04ADD2B848ED800DD07A8 /* Service.swift in Sources */,
 				ABC04AD32B8478DB00DD07A8 /* TimeView.swift in Sources */,
+				ABC04AD52B848B4200DD07A8 /* Entity.swift in Sources */,
+				ABC04AD72B848BE200DD07A8 /* MVVMViewController.swift in Sources */,
 				ABC04AB12B8476F000DD07A8 /* AppDelegate.swift in Sources */,
 				ABC04AC52B84776300DD07A8 /* MVCViewController.swift in Sources */,
 				ABC04AB32B8476F000DD07A8 /* SceneDelegate.swift in Sources */,
+				ABC04ADB2B848E0A00DD07A8 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
