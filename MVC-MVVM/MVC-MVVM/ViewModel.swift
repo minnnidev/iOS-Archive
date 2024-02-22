@@ -12,10 +12,7 @@ import RxRelay
 // model을 view에 보여질 형태로 변경하는 로직이 추가됨
 class ViewModel {
     
-    var onUpdated: () -> () = {}
     var dateTime = BehaviorRelay(value: "Loading...")
-
-
     let service = Service()
 
     func dateToString(date: Date) -> String {
