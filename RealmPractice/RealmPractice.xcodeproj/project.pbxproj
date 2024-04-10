@@ -7,108 +7,113 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB5525902BC3C62E0063DC15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55258F2BC3C62E0063DC15 /* AppDelegate.swift */; };
-		AB5525922BC3C62E0063DC15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5525912BC3C62E0063DC15 /* SceneDelegate.swift */; };
-		AB5525942BC3C62E0063DC15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5525932BC3C62E0063DC15 /* ViewController.swift */; };
-		AB55259A2BC3C62E0063DC15 /* CoreData_Practice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB5525982BC3C62E0063DC15 /* CoreData_Practice.xcdatamodeld */; };
-		AB55259C2BC3C62F0063DC15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB55259B2BC3C62F0063DC15 /* Assets.xcassets */; };
-		AB55259F2BC3C62F0063DC15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB55259D2BC3C62F0063DC15 /* LaunchScreen.storyboard */; };
-		AB5525AC2BC3C8800063DC15 /* Todo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5525AA2BC3C8800063DC15 /* Todo+CoreDataClass.swift */; };
-		AB5525AD2BC3C8800063DC15 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5525AB2BC3C8800063DC15 /* Todo+CoreDataProperties.swift */; };
+		AB6A90BE2BC6DD5700295AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A90BD2BC6DD5700295AAC /* AppDelegate.swift */; };
+		AB6A90C02BC6DD5700295AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A90BF2BC6DD5700295AAC /* SceneDelegate.swift */; };
+		AB6A90C22BC6DD5700295AAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A90C12BC6DD5700295AAC /* ViewController.swift */; };
+		AB6A90C52BC6DD5700295AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB6A90C32BC6DD5700295AAC /* Main.storyboard */; };
+		AB6A90C72BC6DD5900295AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB6A90C62BC6DD5900295AAC /* Assets.xcassets */; };
+		AB6A90CA2BC6DD5900295AAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB6A90C82BC6DD5900295AAC /* LaunchScreen.storyboard */; };
+		AB6A90D32BC6DD7100295AAC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AB6A90D22BC6DD7100295AAC /* Realm */; };
+		AB6A90D52BC6DD7100295AAC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AB6A90D42BC6DD7100295AAC /* RealmSwift */; };
+		AB6A90D72BC6DE0600295AAC /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6A90D62BC6DE0600295AAC /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB55258C2BC3C62E0063DC15 /* CoreData-Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreData-Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB55258F2BC3C62E0063DC15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AB5525912BC3C62E0063DC15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB5525932BC3C62E0063DC15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AB5525992BC3C62E0063DC15 /* CoreData_Practice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData_Practice.xcdatamodel; sourceTree = "<group>"; };
-		AB55259B2BC3C62F0063DC15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AB55259E2BC3C62F0063DC15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AB5525A02BC3C62F0063DC15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB5525AA2BC3C8800063DC15 /* Todo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		AB5525AB2BC3C8800063DC15 /* Todo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AB6A90BA2BC6DD5700295AAC /* RealmPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB6A90BD2BC6DD5700295AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB6A90BF2BC6DD5700295AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AB6A90C12BC6DD5700295AAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB6A90C42BC6DD5700295AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB6A90C62BC6DD5900295AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB6A90C92BC6DD5900295AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB6A90CB2BC6DD5900295AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB6A90D62BC6DE0600295AAC /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AB5525892BC3C62E0063DC15 /* Frameworks */ = {
+		AB6A90B72BC6DD5700295AAC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6A90D52BC6DD7100295AAC /* RealmSwift in Frameworks */,
+				AB6A90D32BC6DD7100295AAC /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB5525832BC3C62E0063DC15 = {
+		AB6A90B12BC6DD5700295AAC = {
 			isa = PBXGroup;
 			children = (
-				AB5525AA2BC3C8800063DC15 /* Todo+CoreDataClass.swift */,
-				AB5525AB2BC3C8800063DC15 /* Todo+CoreDataProperties.swift */,
-				AB55258E2BC3C62E0063DC15 /* CoreData-Practice */,
-				AB55258D2BC3C62E0063DC15 /* Products */,
+				AB6A90BC2BC6DD5700295AAC /* RealmPractice */,
+				AB6A90BB2BC6DD5700295AAC /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AB55258D2BC3C62E0063DC15 /* Products */ = {
+		AB6A90BB2BC6DD5700295AAC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB55258C2BC3C62E0063DC15 /* CoreData-Practice.app */,
+				AB6A90BA2BC6DD5700295AAC /* RealmPractice.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AB55258E2BC3C62E0063DC15 /* CoreData-Practice */ = {
+		AB6A90BC2BC6DD5700295AAC /* RealmPractice */ = {
 			isa = PBXGroup;
 			children = (
-				AB55258F2BC3C62E0063DC15 /* AppDelegate.swift */,
-				AB5525912BC3C62E0063DC15 /* SceneDelegate.swift */,
-				AB5525932BC3C62E0063DC15 /* ViewController.swift */,
-				AB55259B2BC3C62F0063DC15 /* Assets.xcassets */,
-				AB55259D2BC3C62F0063DC15 /* LaunchScreen.storyboard */,
-				AB5525A02BC3C62F0063DC15 /* Info.plist */,
-				AB5525982BC3C62E0063DC15 /* CoreData_Practice.xcdatamodeld */,
+				AB6A90BD2BC6DD5700295AAC /* AppDelegate.swift */,
+				AB6A90BF2BC6DD5700295AAC /* SceneDelegate.swift */,
+				AB6A90C12BC6DD5700295AAC /* ViewController.swift */,
+				AB6A90C32BC6DD5700295AAC /* Main.storyboard */,
+				AB6A90C62BC6DD5900295AAC /* Assets.xcassets */,
+				AB6A90C82BC6DD5900295AAC /* LaunchScreen.storyboard */,
+				AB6A90CB2BC6DD5900295AAC /* Info.plist */,
+				AB6A90D62BC6DE0600295AAC /* Todo.swift */,
 			);
-			path = "CoreData-Practice";
+			path = RealmPractice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AB55258B2BC3C62E0063DC15 /* CoreData-Practice */ = {
+		AB6A90B92BC6DD5700295AAC /* RealmPractice */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB5525A32BC3C62F0063DC15 /* Build configuration list for PBXNativeTarget "CoreData-Practice" */;
+			buildConfigurationList = AB6A90CE2BC6DD5900295AAC /* Build configuration list for PBXNativeTarget "RealmPractice" */;
 			buildPhases = (
-				AB5525882BC3C62E0063DC15 /* Sources */,
-				AB5525892BC3C62E0063DC15 /* Frameworks */,
-				AB55258A2BC3C62E0063DC15 /* Resources */,
+				AB6A90B62BC6DD5700295AAC /* Sources */,
+				AB6A90B72BC6DD5700295AAC /* Frameworks */,
+				AB6A90B82BC6DD5700295AAC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "CoreData-Practice";
-			productName = "CoreData-Practice";
-			productReference = AB55258C2BC3C62E0063DC15 /* CoreData-Practice.app */;
+			name = RealmPractice;
+			packageProductDependencies = (
+				AB6A90D22BC6DD7100295AAC /* Realm */,
+				AB6A90D42BC6DD7100295AAC /* RealmSwift */,
+			);
+			productName = RealmPractice;
+			productReference = AB6A90BA2BC6DD5700295AAC /* RealmPractice.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AB5525842BC3C62E0063DC15 /* Project object */ = {
+		AB6A90B22BC6DD5700295AAC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					AB55258B2BC3C62E0063DC15 = {
+					AB6A90B92BC6DD5700295AAC = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = AB5525872BC3C62E0063DC15 /* Build configuration list for PBXProject "CoreData-Practice" */;
+			buildConfigurationList = AB6A90B52BC6DD5700295AAC /* Build configuration list for PBXProject "RealmPractice" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,49 +121,59 @@
 				en,
 				Base,
 			);
-			mainGroup = AB5525832BC3C62E0063DC15;
-			productRefGroup = AB55258D2BC3C62E0063DC15 /* Products */;
+			mainGroup = AB6A90B12BC6DD5700295AAC;
+			packageReferences = (
+				AB6A90D12BC6DD7100295AAC /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
+			productRefGroup = AB6A90BB2BC6DD5700295AAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AB55258B2BC3C62E0063DC15 /* CoreData-Practice */,
+				AB6A90B92BC6DD5700295AAC /* RealmPractice */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AB55258A2BC3C62E0063DC15 /* Resources */ = {
+		AB6A90B82BC6DD5700295AAC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB55259F2BC3C62F0063DC15 /* LaunchScreen.storyboard in Resources */,
-				AB55259C2BC3C62F0063DC15 /* Assets.xcassets in Resources */,
+				AB6A90CA2BC6DD5900295AAC /* LaunchScreen.storyboard in Resources */,
+				AB6A90C72BC6DD5900295AAC /* Assets.xcassets in Resources */,
+				AB6A90C52BC6DD5700295AAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AB5525882BC3C62E0063DC15 /* Sources */ = {
+		AB6A90B62BC6DD5700295AAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB5525942BC3C62E0063DC15 /* ViewController.swift in Sources */,
-				AB5525902BC3C62E0063DC15 /* AppDelegate.swift in Sources */,
-				AB5525922BC3C62E0063DC15 /* SceneDelegate.swift in Sources */,
-				AB5525AC2BC3C8800063DC15 /* Todo+CoreDataClass.swift in Sources */,
-				AB55259A2BC3C62E0063DC15 /* CoreData_Practice.xcdatamodeld in Sources */,
-				AB5525AD2BC3C8800063DC15 /* Todo+CoreDataProperties.swift in Sources */,
+				AB6A90C22BC6DD5700295AAC /* ViewController.swift in Sources */,
+				AB6A90BE2BC6DD5700295AAC /* AppDelegate.swift in Sources */,
+				AB6A90C02BC6DD5700295AAC /* SceneDelegate.swift in Sources */,
+				AB6A90D72BC6DE0600295AAC /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AB55259D2BC3C62F0063DC15 /* LaunchScreen.storyboard */ = {
+		AB6A90C32BC6DD5700295AAC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AB55259E2BC3C62F0063DC15 /* Base */,
+				AB6A90C42BC6DD5700295AAC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AB6A90C82BC6DD5900295AAC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB6A90C92BC6DD5900295AAC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +181,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AB5525A12BC3C62F0063DC15 /* Debug */ = {
+		AB6A90CC2BC6DD5900295AAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -229,7 +244,7 @@
 			};
 			name = Debug;
 		};
-		AB5525A22BC3C62F0063DC15 /* Release */ = {
+		AB6A90CD2BC6DD5900295AAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -285,7 +300,7 @@
 			};
 			name = Release;
 		};
-		AB5525A42BC3C62F0063DC15 /* Debug */ = {
+		AB6A90CF2BC6DD5900295AAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -294,9 +309,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BTX96P3YD4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "CoreData-Practice/Info.plist";
+				INFOPLIST_FILE = RealmPractice/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -304,7 +320,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "min.CoreData-Practice";
+				PRODUCT_BUNDLE_IDENTIFIER = min.RealmPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -312,7 +328,7 @@
 			};
 			name = Debug;
 		};
-		AB5525A52BC3C62F0063DC15 /* Release */ = {
+		AB6A90D02BC6DD5900295AAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -321,9 +337,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BTX96P3YD4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "CoreData-Practice/Info.plist";
+				INFOPLIST_FILE = RealmPractice/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -331,7 +348,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "min.CoreData-Practice";
+				PRODUCT_BUNDLE_IDENTIFIER = min.RealmPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -342,38 +359,49 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AB5525872BC3C62E0063DC15 /* Build configuration list for PBXProject "CoreData-Practice" */ = {
+		AB6A90B52BC6DD5700295AAC /* Build configuration list for PBXProject "RealmPractice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB5525A12BC3C62F0063DC15 /* Debug */,
-				AB5525A22BC3C62F0063DC15 /* Release */,
+				AB6A90CC2BC6DD5900295AAC /* Debug */,
+				AB6A90CD2BC6DD5900295AAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB5525A32BC3C62F0063DC15 /* Build configuration list for PBXNativeTarget "CoreData-Practice" */ = {
+		AB6A90CE2BC6DD5900295AAC /* Build configuration list for PBXNativeTarget "RealmPractice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB5525A42BC3C62F0063DC15 /* Debug */,
-				AB5525A52BC3C62F0063DC15 /* Release */,
+				AB6A90CF2BC6DD5900295AAC /* Debug */,
+				AB6A90D02BC6DD5900295AAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		AB5525982BC3C62E0063DC15 /* CoreData_Practice.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AB5525992BC3C62E0063DC15 /* CoreData_Practice.xcdatamodel */,
-			);
-			currentVersion = AB5525992BC3C62E0063DC15 /* CoreData_Practice.xcdatamodel */;
-			path = CoreData_Practice.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCRemoteSwiftPackageReference section */
+		AB6A90D12BC6DD7100295AAC /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
 		};
-/* End XCVersionGroup section */
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB6A90D22BC6DD7100295AAC /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB6A90D12BC6DD7100295AAC /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		AB6A90D42BC6DD7100295AAC /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB6A90D12BC6DD7100295AAC /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = AB5525842BC3C62E0063DC15 /* Project object */;
+	rootObject = AB6A90B22BC6DD5700295AAC /* Project object */;
 }
