@@ -22,5 +22,6 @@
         <page name='generic'/>
         <page name='MethodDispatch'/>
         <page name='ErrorHandling'/>
+        <page name='AboutEnum'/>
     </pages>
 </playground>
