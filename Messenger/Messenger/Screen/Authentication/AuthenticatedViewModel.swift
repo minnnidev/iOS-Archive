@@ -28,6 +28,7 @@ class AuthenticatedViewModel: ObservableObject {
     }
 
     enum Action {
+        case checkAuthenticationState
         case googleLogin
         case appleLogin(ASAuthorizationAppleIDRequest)
         case appleLoginCompletion(Result<ASAuthorization, Error>)
@@ -35,11 +36,17 @@ class AuthenticatedViewModel: ObservableObject {
 
     func send(action: Action) {
         switch action {
+        case .checkAuthenticationState:
+            if let userId = container.services.authService.checkAuthenticationState() {
+                self.userId = userId
+                self.authenticationState = .authenticated
+            }
         case .googleLogin:
             container.services.authService.signInWithGoogle()
                 .sink { completion in
                 } receiveValue: { [weak self] user in
                     self?.userId = user.id
+                    self?.authenticationState = .authenticated
                 }
                 .store(in: &subscriptions)
         case .appleLogin(let request):
@@ -55,6 +62,7 @@ class AuthenticatedViewModel: ObservableObject {
 
                     } receiveValue: { [weak self] user in
                         self?.userId = user.id
+                        self?.authenticationState = .authenticated
                     }
                     .store(in: &subscriptions)
             } else if case let .failure(error) = result {
