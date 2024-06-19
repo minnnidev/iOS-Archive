@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
     @Environment(\.dismiss) var dismiss
@@ -32,12 +33,17 @@ struct LoginView: View {
             }
             .buttonStyle(LoginButtonStyle(textColor: .black, borderColor: .gray))
 
-            Button {
-                // TODO: - Apple 로그인
-            } label: {
-                Text("Apple로 로그인")
+            SignInWithAppleButton { request in
+                // 인증 요청
+                authViewModel.send(action: .appleLogin(request))
+            } onCompletion: { result in
+                // 인증 완료 후 -> 성공 시 firebase
+                authViewModel.send(action: .appleLoginCompletion(result))
             }
-            .buttonStyle(LoginButtonStyle(textColor: .black, borderColor: .gray))
+            .frame(height: 40)
+            .padding(.horizontal, 15)
+            .cornerRadius(8)
+
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {

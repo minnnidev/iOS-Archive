@@ -10,6 +10,7 @@ import Combine
 import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
+import AuthenticationServices
 
 enum AuthenticationError: Error {
     case clientIDError
@@ -19,6 +20,8 @@ enum AuthenticationError: Error {
 
 protocol AuthenticationServiceType {
     func signInWithGoogle() -> AnyPublisher<User, ServiceError>
+    func handleSignInWithAppleRequest(_ request: ASAuthorizationAppleIDRequest) -> String
+    func handleSignInWithAppleCompletion(_ authorization: ASAuthorization, nonce: String) -> AnyPublisher<User, ServiceError>
 }
 
 class AuthenticationService: AuthenticationServiceType {
@@ -26,6 +29,28 @@ class AuthenticationService: AuthenticationServiceType {
     func signInWithGoogle() -> AnyPublisher<User, ServiceError> {
         Future { [weak self] promise in
             self?.signInWithGoogle { result in
+                switch result {
+                case let .success(user):
+                    promise(.success(user))
+                case let .failure(error):
+                    promise(.failure(.error(error)))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+
+    func handleSignInWithAppleRequest(_ request: ASAuthorizationAppleIDRequest) -> String {
+        request.requestedScopes = [.fullName, .email]
+        let nounce = randomNonceString()
+        request.nonce = sha256(nounce)
+        
+        return nounce
+    }
+
+    func handleSignInWithAppleCompletion(_ authorization: ASAuthorization, nonce: String) -> AnyPublisher<User, ServiceError> {
+        Future { [weak self] promise in
+            self?.handleSignInWithAppleCompletion(authorization, nonce: nonce) { result in
                 switch result {
                 case let .success(user):
                     promise(.success(user))
@@ -95,11 +120,50 @@ extension AuthenticationService {
             completion(.success(user))
         }
     }
+
+    private func handleSignInWithAppleCompletion(_ authorization: ASAuthorization,
+                                                 nonce: String,
+                                                 completion: @escaping (Result<User, Error>) -> Void) {
+        guard let appleIdCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
+              let appleIdToken = appleIdCredential.identityToken else {
+            completion(.failure(AuthenticationError.tokenError))
+            return
+        }
+
+        guard let idTokenString = String(data: appleIdToken, encoding: .utf8) else {
+            completion(.failure(AuthenticationError.tokenError))
+            return
+        }
+
+        let credential = OAuthProvider.credential(withProviderID: "apple.com",
+                                                  idToken: idTokenString,
+                                                  rawNonce: nonce)
+
+        authenticateUserWithFirebase(credential: credential) { result in
+            switch result {
+            case var .success(user):
+                let name = [appleIdCredential.fullName?.givenName, appleIdCredential.fullName?.familyName]
+                    .compactMap { $0 }
+                    .joined(separator: " ")
+                completion(.success(user))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
 
 class StubAuthenticationService: AuthenticationServiceType {
 
     func signInWithGoogle() -> AnyPublisher<User, ServiceError> {
+        Empty().eraseToAnyPublisher()
+    }
+
+    func handleSignInWithAppleRequest(_ request: ASAuthorizationAppleIDRequest) -> String {
+        return ""
+    }
+
+    func handleSignInWithAppleCompletion(_ authorization: ASAuthorization, nonce: String) -> AnyPublisher<User, ServiceError> {
         Empty().eraseToAnyPublisher()
     }
 }

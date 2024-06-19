@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import AuthenticationServices
 
 enum AuthenticationState {
     case unauthenticated
@@ -18,6 +19,7 @@ class AuthenticatedViewModel: ObservableObject {
 
     var userId: String?
 
+    private var currentNonce: String?
     private var container: DIContainer
     private var subscriptions = Set<AnyCancellable>()
 
@@ -27,6 +29,8 @@ class AuthenticatedViewModel: ObservableObject {
 
     enum Action {
         case googleLogin
+        case appleLogin(ASAuthorizationAppleIDRequest)
+        case appleLoginCompletion(Result<ASAuthorization, Error>)
     }
 
     func send(action: Action) {
@@ -34,13 +38,28 @@ class AuthenticatedViewModel: ObservableObject {
         case .googleLogin:
             container.services.authService.signInWithGoogle()
                 .sink { completion in
-                    // TODO: -
                 } receiveValue: { [weak self] user in
                     self?.userId = user.id
                 }
                 .store(in: &subscriptions)
+        case .appleLogin(let request):
+            let nonce = container.services.authService.handleSignInWithAppleRequest(request)
+            currentNonce = nonce
+            
+        case .appleLoginCompletion(let result):
+            if case let .success(authorization) = result {
+                guard let nonce = currentNonce else { return }
 
-            return
+                container.services.authService.handleSignInWithAppleCompletion(authorization, nonce: nonce)
+                    .sink { completion in
+
+                    } receiveValue: { [weak self] user in
+                        self?.userId = user.id
+                    }
+                    .store(in: &subscriptions)
+            } else if case let .failure(error) = result {
+                print(error.localizedDescription)
+            }
         }
     }
 }
