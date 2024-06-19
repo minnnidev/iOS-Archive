@@ -10,7 +10,7 @@ import SwiftUI
 extension Color {
     static let bgWh: Color = .init("bg-wh")
     static let bk2Fix: Color = .init("bk-2-fix")
-    static let bkText: Color = .init("bk-text")
+    static let bkText = Color("bk-text")
     static let blackFix: Color = .init("black-fix")
     static let chatBg: Color = .init("chat-bg")
     static let chatColorMe: Color = .init("chat-color-me")

@@ -26,6 +26,8 @@
 		AB32AB172C21E9AE00AFF543 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB162C21E9AE00AFF543 /* AuthenticationService.swift */; };
 		AB32AB1B2C21EB3F00AFF543 /* LoginIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB1A2C21EB3F00AFF543 /* LoginIntroView.swift */; };
 		AB32AB1D2C21EB4700AFF543 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB1C2C21EB4700AFF543 /* MainTabView.swift */; };
+		AB32AB222C229B4000AFF543 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB212C229B4000AFF543 /* LoginView.swift */; };
+		AB32AB242C229BE700AFF543 /* LoginButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB232C229BE700AFF543 /* LoginButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		AB32AB162C21E9AE00AFF543 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		AB32AB1A2C21EB3F00AFF543 /* LoginIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntroView.swift; sourceTree = "<group>"; };
 		AB32AB1C2C21EB4700AFF543 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		AB32AB212C229B4000AFF543 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AB32AB232C229BE700AFF543 /* LoginButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				AB32AB1A2C21EB3F00AFF543 /* LoginIntroView.swift */,
+				AB32AB212C229B4000AFF543 /* LoginView.swift */,
+				AB32AB232C229BE700AFF543 /* LoginButtonStyle.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -375,7 +381,9 @@
 				AB32AB072C21E5A100AFF543 /* Service.swift in Sources */,
 				AB32AB122C21E84400AFF543 /* AppDelegate.swift in Sources */,
 				AB32AAF92C21E1C400AFF543 /* Color+Extension.swift in Sources */,
+				AB32AB242C229BE700AFF543 /* LoginButtonStyle.swift in Sources */,
 				AB32AAC92C21E0CE00AFF543 /* MessengerApp.swift in Sources */,
+				AB32AB222C229B4000AFF543 /* LoginView.swift in Sources */,
 				AB32AB172C21E9AE00AFF543 /* AuthenticationService.swift in Sources */,
 				AB32AB1D2C21EB4700AFF543 /* MainTabView.swift in Sources */,
 			);
