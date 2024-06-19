@@ -33,6 +33,10 @@
 		AB32AB2C2C22A14900AFF543 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB2B2C22A14900AFF543 /* ServiceError.swift */; };
 		AB32AB332C22AA1900AFF543 /* RandomNounceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB322C22AA1800AFF543 /* RandomNounceString.swift */; };
 		AB32AB352C22AA2E00AFF543 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB342C22AA2E00AFF543 /* SHA256.swift */; };
+		AB32AB372C22C55800AFF543 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB362C22C55800AFF543 /* TabType.swift */; };
+		AB32AB3C2C22C63A00AFF543 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB3B2C22C63A00AFF543 /* HomeView.swift */; };
+		AB32AB3E2C22C64700AFF543 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB3D2C22C64700AFF543 /* ChatListView.swift */; };
+		AB32AB402C22C79B00AFF543 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB32AB3F2C22C79B00AFF543 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,10 @@
 		AB32AB2D2C22A81500AFF543 /* Messenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Messenger.entitlements; sourceTree = "<group>"; };
 		AB32AB322C22AA1800AFF543 /* RandomNounceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNounceString.swift; sourceTree = "<group>"; };
 		AB32AB342C22AA2E00AFF543 /* SHA256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
+		AB32AB362C22C55800AFF543 /* TabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabType.swift; sourceTree = "<group>"; };
+		AB32AB3B2C22C63A00AFF543 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AB32AB3D2C22C64700AFF543 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		AB32AB3F2C22C79B00AFF543 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +226,8 @@
 			children = (
 				AB32AB032C21E57300AFF543 /* Authentication */,
 				AB32AB182C21EB2000AFF543 /* Login */,
+				AB32AB382C22C61200AFF543 /* Home */,
+				AB32AB392C22C61800AFF543 /* Chat */,
 				AB32AB192C21EB2500AFF543 /* MainTab */,
 			);
 			path = Screen;
@@ -246,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				AB32AB1C2C21EB4700AFF543 /* MainTabView.swift */,
+				AB32AB362C22C55800AFF543 /* TabType.swift */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -265,6 +276,23 @@
 				AB32AB342C22AA2E00AFF543 /* SHA256.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		AB32AB382C22C61200AFF543 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AB32AB3B2C22C63A00AFF543 /* HomeView.swift */,
+				AB32AB3F2C22C79B00AFF543 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AB32AB392C22C61800AFF543 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				AB32AB3D2C22C64700AFF543 /* ChatListView.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,11 +439,15 @@
 				AB32AB352C22AA2E00AFF543 /* SHA256.swift in Sources */,
 				AB32AB332C22AA1900AFF543 /* RandomNounceString.swift in Sources */,
 				AB32AB2A2C22A11A00AFF543 /* User.swift in Sources */,
+				AB32AB402C22C79B00AFF543 /* HomeViewModel.swift in Sources */,
 				AB32AB1B2C21EB3F00AFF543 /* LoginIntroView.swift in Sources */,
 				AB32AB092C21E5ED00AFF543 /* AuthenticatedViewModel.swift in Sources */,
 				AB32AB052C21E58200AFF543 /* DIContainer.swift in Sources */,
+				AB32AB372C22C55800AFF543 /* TabType.swift in Sources */,
 				AB32AACB2C21E0CE00AFF543 /* AuthenticatedView.swift in Sources */,
+				AB32AB3E2C22C64700AFF543 /* ChatListView.swift in Sources */,
 				AB32AB072C21E5A100AFF543 /* Service.swift in Sources */,
+				AB32AB3C2C22C63A00AFF543 /* HomeView.swift in Sources */,
 				AB32AB122C21E84400AFF543 /* AppDelegate.swift in Sources */,
 				AB32AAF92C21E1C400AFF543 /* Color+Extension.swift in Sources */,
 				AB32AB242C229BE700AFF543 /* LoginButtonStyle.swift in Sources */,
