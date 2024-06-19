@@ -50,6 +50,9 @@ struct HomeView: View {
                     Image("settings")
                 }
             }
+            .onAppear {
+                viewModel.send(action: .getUser)
+            }
         }
     }
 
@@ -58,7 +61,7 @@ struct HomeView: View {
             VStack(alignment: .leading, spacing: 7) {
                 Text(viewModel.myUser?.name ?? "이름")
                     .font(.system(size: 22, weight: .bold))
-                Text(viewModel.myUser?.description ?? "흠냐링")
+                Text(viewModel.myUser?.description ?? "흠냐흠냐")
                     .font(.system(size: 12))
             }
             Spacer()
@@ -112,5 +115,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(viewModel: .init())
+    HomeView(viewModel: .init(container: .init(services: StubService()), userId: ""))
 }
