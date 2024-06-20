@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct ChattingAppApp: App {
     @StateObject private var container: DIContainer = .init(services: Services())
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
     var body: some Scene {
         WindowGroup {
-            AuthenticatedView(viewModel: .init())
+            AuthenticatedView(viewModel: .init(container: container))
                 .environmentObject(container)
         }
     }

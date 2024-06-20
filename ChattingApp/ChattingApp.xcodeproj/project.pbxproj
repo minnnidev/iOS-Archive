@@ -19,6 +19,12 @@
 		AB58AAFB2C2340BF0070420B /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AAFA2C2340BF0070420B /* DIContainer.swift */; };
 		AB58AAFE2C2340E10070420B /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AAFD2C2340E10070420B /* Services.swift */; };
 		AB58AB002C23415F0070420B /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AAFF2C23415F0070420B /* AuthenticationViewModel.swift */; };
+		AB58AB072C243D6E0070420B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AB58AB062C243D6E0070420B /* FirebaseAuth */; };
+		AB58AB092C243E260070420B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AB082C243E260070420B /* AppDelegate.swift */; };
+		AB58AB0B2C243EB60070420B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB58AB0A2C243EB60070420B /* GoogleService-Info.plist */; };
+		AB58AB0E2C243F980070420B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AB0D2C243F980070420B /* AuthService.swift */; };
+		AB58AB122C2442390070420B /* LoginIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AB112C2442390070420B /* LoginIntroView.swift */; };
+		AB58AB142C2442420070420B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AB132C2442420070420B /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,12 @@
 		AB58AAFA2C2340BF0070420B /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		AB58AAFD2C2340E10070420B /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		AB58AAFF2C23415F0070420B /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		AB58AB082C243E260070420B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB58AB0A2C243EB60070420B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB58AB0C2C243EE00070420B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AB58AB0D2C243F980070420B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		AB58AB112C2442390070420B /* LoginIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntroView.swift; sourceTree = "<group>"; };
+		AB58AB132C2442420070420B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB58AB072C243D6E0070420B /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +118,8 @@
 		AB3416792C231C4900698844 /* ChattingApp */ = {
 			isa = PBXGroup;
 			children = (
+				AB58AB0C2C243EE00070420B /* Info.plist */,
+				AB58AB0A2C243EB60070420B /* GoogleService-Info.plist */,
 				AB34167A2C231C4900698844 /* ChattingAppApp.swift */,
 				AB58AAF72C233F9E0070420B /* General */,
 				AB58AAF82C233FAA0070420B /* Scene */,
@@ -163,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				AB58AAFA2C2340BF0070420B /* DIContainer.swift */,
+				AB58AB082C243E260070420B /* AppDelegate.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -171,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				AB58AAF92C2340990070420B /* Auth */,
+				AB58AB102C2442240070420B /* Login */,
+				AB58AB0F2C2442150070420B /* MainTab */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -188,8 +206,25 @@
 			isa = PBXGroup;
 			children = (
 				AB58AAFD2C2340E10070420B /* Services.swift */,
+				AB58AB0D2C243F980070420B /* AuthService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		AB58AB0F2C2442150070420B /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				AB58AB132C2442420070420B /* MainTabView.swift */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		AB58AB102C2442240070420B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AB58AB112C2442390070420B /* LoginIntroView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +243,9 @@
 			dependencies = (
 			);
 			name = ChattingApp;
+			packageProductDependencies = (
+				AB58AB062C243D6E0070420B /* FirebaseAuth */,
+			);
 			productName = ChattingApp;
 			productReference = AB3416772C231C4900698844 /* ChattingApp.app */;
 			productType = "com.apple.product-type.application";
@@ -280,6 +318,9 @@
 				Base,
 			);
 			mainGroup = AB34166E2C231C4900698844;
+			packageReferences = (
+				AB58AB052C243D6E0070420B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = AB3416782C231C4900698844 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -296,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB58AB0B2C243EB60070420B /* GoogleService-Info.plist in Resources */,
 				AB58AAF22C233E430070420B /* LaunchScreen.storyboard in Resources */,
 				AB58AAF42C233EB30070420B /* Colors.xcassets in Resources */,
 				AB3416822C231C4A00698844 /* Preview Assets.xcassets in Resources */,
@@ -324,11 +366,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB58AB092C243E260070420B /* AppDelegate.swift in Sources */,
 				AB34167D2C231C4900698844 /* AuthenticatedView.swift in Sources */,
+				AB58AB142C2442420070420B /* MainTabView.swift in Sources */,
 				AB58AB002C23415F0070420B /* AuthenticationViewModel.swift in Sources */,
 				AB58AAFE2C2340E10070420B /* Services.swift in Sources */,
 				AB58AAFB2C2340BF0070420B /* DIContainer.swift in Sources */,
 				AB34167B2C231C4900698844 /* ChattingAppApp.swift in Sources */,
+				AB58AB0E2C243F980070420B /* AuthService.swift in Sources */,
+				AB58AB122C2442390070420B /* LoginIntroView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +541,7 @@
 				DEVELOPMENT_TEAM = BTX96P3YD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChattingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -525,6 +572,7 @@
 				DEVELOPMENT_TEAM = BTX96P3YD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChattingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -660,6 +708,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB58AB052C243D6E0070420B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB58AB062C243D6E0070420B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB58AB052C243D6E0070420B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB34166F2C231C4900698844 /* Project object */;
 }
