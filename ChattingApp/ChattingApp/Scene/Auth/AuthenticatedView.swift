@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct AuthenticatedView: View {
-    @StateObject var viewModel: AuthenticationViewModel
+    @StateObject var authViewModel: AuthenticationViewModel
 
     var body: some View {
-        switch viewModel.authenticationState {
+        switch authViewModel.authenticationState {
         case .unauthenticated:
             LoginIntroView()
+                .environmentObject(authViewModel)
         case .authenticated:
             MainTabView()
         }
@@ -21,5 +22,5 @@ struct AuthenticatedView: View {
 }
 
 #Preview {
-    AuthenticatedView(viewModel: AuthenticationViewModel(container: .init(services: StubServices())))
+    AuthenticatedView(authViewModel: AuthenticationViewModel(container: .init(services: StubServices())))
 }

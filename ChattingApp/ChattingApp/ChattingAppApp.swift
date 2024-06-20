@@ -15,7 +15,7 @@ struct ChattingAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AuthenticatedView(viewModel: .init(container: container))
+            AuthenticatedView(authViewModel: .init(container: container))
                 .environmentObject(container)
         }
     }
