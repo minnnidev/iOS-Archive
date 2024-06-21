@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
     @Environment(\.dismiss) var dismiss
@@ -32,13 +33,14 @@ struct LoginView: View {
             }
             .buttonStyle(LoginButtonStyle(textColor: .bkText, borderColor: .greyLight))
 
-            Button {
-                // TODO: - Apple 로그인
-            } label: {
-                Text("Apple로 로그인")
+            SignInWithAppleButton { request in
+                viewModel.send(action: .appleLogin(request))
+            } onCompletion: { result in
+                viewModel.send(action: .appleLoginCompletion(result))
             }
-            .buttonStyle(LoginButtonStyle(textColor: .bkText, borderColor: .greyLight))
-
+            .frame(maxWidth: .infinity, maxHeight: 40)
+            .cornerRadius(5)
+            .padding(.horizontal, 15)
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
