@@ -17,9 +17,11 @@ enum AuthenticationState {
 class AuthenticationViewModel: ObservableObject {
 
     enum Action {
+        case checkAuthenticationState
         case googleLogin
         case appleLogin(ASAuthorizationAppleIDRequest)
         case appleLoginCompletion(Result<ASAuthorization, Error>)
+        case logout
     }
 
     @Published var authenticationState: AuthenticationState = .unauthenticated
@@ -37,6 +39,12 @@ class AuthenticationViewModel: ObservableObject {
 
     func send(action: Action) {
         switch action {
+        case .checkAuthenticationState:
+            if let userId = container.services.authService.checkAuthentication() {
+                self.userId = userId
+                self.authenticationState = .authenticated
+            }
+            
         case .googleLogin:
             isLoading = true
             container.services.authService.signInWithGoogle()
@@ -48,11 +56,14 @@ class AuthenticationViewModel: ObservableObject {
                 } receiveValue: { [weak self] user in
                     self?.isLoading = false
                     self?.userId = user.id
+                    self?.authenticationState = .authenticated
                 }
                 .store(in: &subscriptions)
+
         case let .appleLogin(request):
             let nonce = container.services.authService.handleSignInWithAppleRequest(request)
             currentNonce = nonce
+
         case let .appleLoginCompletion(result):
             isLoading = true
             if case let .success(authorization) = result {
@@ -67,12 +78,23 @@ class AuthenticationViewModel: ObservableObject {
                     } receiveValue: { [weak self] user in
                         self?.isLoading = false
                         self?.userId = user.id
+                        self?.authenticationState = .authenticated
                     }
                     .store(in: &subscriptions)
             } else if case let .failure(error) = result {
                 print(error.localizedDescription)
                 isLoading = false
             }
+
+        case .logout:
+            container.services.authService.logout()
+                .sink { completion in
+                    // TODO: 
+                } receiveValue: { [weak self] _ in
+                    self?.authenticationState = .unauthenticated
+                    self?.userId = nil
+                }
+                .store(in: &subscriptions)
         }
     }
 }

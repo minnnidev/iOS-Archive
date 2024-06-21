@@ -19,13 +19,23 @@ enum AuthError: Error {
 }
 
 protocol AuthServiceType {
+    func checkAuthentication() -> String?
     func signInWithGoogle() -> AnyPublisher<User, ServiceError>
     func handleSignInWithAppleRequest(_ request: ASAuthorizationAppleIDRequest) -> String
     func handleSignInWithAppleCompletion(_ authorization: ASAuthorization, nonce: String) -> AnyPublisher<User, ServiceError>
+    func logout() -> AnyPublisher<Void, ServiceError>
 }
 
 class AuthService: AuthServiceType {
-    
+
+    func checkAuthentication() -> String? {
+        if let user = Auth.auth().currentUser {
+            return user.uid
+        } else {
+            return nil
+        }
+    }
+
     func signInWithGoogle() -> AnyPublisher<User, ServiceError> {
         Future { [weak self] promise in
             self?.signInWithGoogle { result in
@@ -58,6 +68,19 @@ class AuthService: AuthServiceType {
                 case let .failure(error):
                     promise(.failure(.error(error)))
                 }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+
+    func logout() -> AnyPublisher<Void, ServiceError> {
+        Future { promise in
+            do {
+                try Auth.auth().signOut()
+                promise(.success(()))
+
+            } catch {
+                promise(.failure(.error(error)))
             }
         }
         .eraseToAnyPublisher()
@@ -158,6 +181,9 @@ extension AuthService {
 }
 
 class StubAuthService: AuthServiceType {
+    func checkAuthentication() -> String? {
+        nil
+    }
 
     func signInWithGoogle() -> AnyPublisher<User, ServiceError> {
         Empty().eraseToAnyPublisher()
@@ -167,8 +193,11 @@ class StubAuthService: AuthServiceType {
         ""
     }
 
-
     func handleSignInWithAppleCompletion(_ authorization: ASAuthorization, nonce: String) -> AnyPublisher<User, ServiceError> {
+        Empty().eraseToAnyPublisher()
+    }
+
+    func logout() -> AnyPublisher<Void, ServiceError> {
         Empty().eraseToAnyPublisher()
     }
 }
