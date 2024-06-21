@@ -23,6 +23,7 @@ class AuthenticationViewModel: ObservableObject {
     }
 
     @Published var authenticationState: AuthenticationState = .unauthenticated
+    @Published var isLoading = false
 
     private var container: DIContainer
     private var subscriptions = Set<AnyCancellable>()
@@ -37,10 +38,15 @@ class AuthenticationViewModel: ObservableObject {
     func send(action: Action) {
         switch action {
         case .googleLogin:
+            isLoading = true
             container.services.authService.signInWithGoogle()
-                .sink { completion in
-                    // TODO: -
+                .sink { [weak self] completion in
+                    if case .failure = completion {
+                        self?.isLoading = false
+                        // TODO: - alert 추가
+                    }
                 } receiveValue: { [weak self] user in
+                    self?.isLoading = false
                     self?.userId = user.id
                 }
                 .store(in: &subscriptions)
@@ -48,18 +54,24 @@ class AuthenticationViewModel: ObservableObject {
             let nonce = container.services.authService.handleSignInWithAppleRequest(request)
             currentNonce = nonce
         case let .appleLoginCompletion(result):
+            isLoading = true
             if case let .success(authorization) = result {
                 guard let nonce = currentNonce else { return }
 
                 container.services.authService.handleSignInWithAppleCompletion(authorization, nonce: nonce)
-                    .sink { completion in
-                        // TODO:
+                    .sink { [weak self] completion in
+                        if case .failure = completion {
+                            self?.isLoading = false
+                            // TODO: - alert 추가
+                        }
                     } receiveValue: { [weak self] user in
+                        self?.isLoading = false
                         self?.userId = user.id
                     }
                     .store(in: &subscriptions)
             } else if case let .failure(error) = result {
                 print(error.localizedDescription)
+                isLoading = false
             }
         }
     }

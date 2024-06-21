@@ -51,6 +51,11 @@ struct LoginView: View {
                 }
             }
         }
+        .overlay {
+            if viewModel.isLoading {
+                ProgressView()
+            }
+        }
     }
 }
 
