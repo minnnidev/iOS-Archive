@@ -38,6 +38,13 @@ struct MainTabView: View {
         .tint(Color.black)
     }
 }
-#Preview {
-    MainTabView()
+
+struct MainTabView_Previews: PreviewProvider {
+    static let container = DIContainer(services: StubServices())
+
+    static var previews: some View {
+        MainTabView()
+            .environmentObject(container)
+            .environmentObject(AuthenticationViewModel(container: container))
+    }
 }

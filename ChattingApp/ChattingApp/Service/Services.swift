@@ -24,11 +24,6 @@ class Services: ServiceType {
 }
 
 class StubServices: ServiceType {
-    var authService: AuthServiceType
-    var userService: UserServiceType
-
-    init() {
-        self.authService = StubAuthService()
-        self.userService = UserService(dbRepository: UserDBRepository())
-    }
+    var authService: AuthServiceType = StubAuthService()
+    var userService: UserServiceType = StubUserService()
 }
