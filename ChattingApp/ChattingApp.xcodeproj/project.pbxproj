@@ -32,6 +32,7 @@
 		AB58AB212C244B1E0070420B /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AB202C244B1E0070420B /* ServiceError.swift */; };
 		AB58AB302C2528AB0070420B /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AB2E2C2528AA0070420B /* SHA256.swift */; };
 		AB58AB312C2528AB0070420B /* RandomNounceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AB2F2C2528AB0070420B /* RandomNounceString.swift */; };
+		ABF79DDB2C28364E00212DA5 /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF79DDA2C28364E00212DA5 /* MainTabType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		AB58AB2C2C2524F70070420B /* ChattingApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChattingApp.entitlements; sourceTree = "<group>"; };
 		AB58AB2E2C2528AA0070420B /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 		AB58AB2F2C2528AB0070420B /* RandomNounceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNounceString.swift; sourceTree = "<group>"; };
+		ABF79DDA2C28364E00212DA5 /* MainTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				AB58AB132C2442420070420B /* MainTabView.swift */,
+				ABF79DDA2C28364E00212DA5 /* MainTabType.swift */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				AB34167B2C231C4900698844 /* ChattingAppApp.swift in Sources */,
 				AB58AB0E2C243F980070420B /* AuthService.swift in Sources */,
 				AB58AB302C2528AB0070420B /* SHA256.swift in Sources */,
+				ABF79DDB2C28364E00212DA5 /* MainTabType.swift in Sources */,
 				AB58AB212C244B1E0070420B /* ServiceError.swift in Sources */,
 				AB58AB1E2C244AE00070420B /* User.swift in Sources */,
 				AB58AB162C2442C40070420B /* LoginView.swift in Sources */,

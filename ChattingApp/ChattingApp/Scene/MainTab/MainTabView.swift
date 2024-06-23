@@ -8,11 +8,36 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @EnvironmentObject var viewModel: AuthenticationViewModel
+    @EnvironmentObject var container: DIContainer
+    @State private var selectedTab: MainTabType = .home
+
+    init() {
+        UITabBar.appearance().unselectedItemTintColor = .black
+    }
+
     var body: some View {
-        Text("Main Tab")
+        TabView(selection: $selectedTab) {
+            ForEach(MainTabType.allCases, id: \.self) { tab in
+                Group {
+                    switch tab {
+                    case .home:
+                        Text("home")
+                    case .chat:
+                        Text("chat")
+                    case .phone:
+                        Text("Phone")
+                    }
+                }
+                .tabItem {
+                    Label(tab.title, image: tab.imageName(selected: selectedTab == tab))
+                }
+                .tag(tab)
+            }
+        }
+        .tint(Color.black)
     }
 }
-
 #Preview {
     MainTabView()
 }
