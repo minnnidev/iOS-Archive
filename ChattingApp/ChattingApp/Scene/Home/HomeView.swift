@@ -53,7 +53,7 @@ struct HomeView: View {
                 }
             }
             .onAppear {
-                viewModel.send(.getUser)
+                viewModel.send(.load)
             }
         }
     }

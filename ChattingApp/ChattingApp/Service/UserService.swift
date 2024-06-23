@@ -11,6 +11,7 @@ import Combine
 protocol UserServiceType {
     func addUser(_ user: User) -> AnyPublisher<User, ServiceError>
     func getUser(userId: String) -> AnyPublisher<User, ServiceError>
+    func loadUsers(userId: String) -> AnyPublisher<[User], ServiceError>
 }
 
 class UserService: UserServiceType {
@@ -35,6 +36,16 @@ class UserService: UserServiceType {
             .mapError { .error($0) }
             .eraseToAnyPublisher()
     }
+
+    func loadUsers(userId: String) -> AnyPublisher<[User], ServiceError> {
+        dbRepository.loadUsers()
+            .map {
+                $0.map { $0.toUser() }
+                    .filter { $0.id != userId }
+            }
+            .mapError { .error($0) }
+            .eraseToAnyPublisher()
+    }
 }
 
 class StubUserService: UserServiceType {
@@ -44,6 +55,10 @@ class StubUserService: UserServiceType {
     }
 
     func getUser(userId: String) -> AnyPublisher<User, ServiceError> {
+        Empty().eraseToAnyPublisher()
+    }
+
+    func loadUsers(userId: String) -> AnyPublisher<[User], ServiceError> {
         Empty().eraseToAnyPublisher()
     }
 }
