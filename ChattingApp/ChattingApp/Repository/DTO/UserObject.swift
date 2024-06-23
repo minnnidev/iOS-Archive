@@ -1,13 +1,13 @@
 //
-//  User.swift
+//  UserObject.swift
 //  ChattingApp
 //
-//  Created by 김민 on 6/20/24.
+//  Created by 김민 on 6/23/24.
 //
 
 import Foundation
 
-struct User {
+struct UserObject: Codable {
     var id: String
     var name: String
     var phoneNumber: String?
@@ -15,19 +15,9 @@ struct User {
     var description: String?
 }
 
-extension User {
-    static var stub1: User {
-        .init(id: "user1_id", name: "user1")
-    }
+extension UserObject {
 
-    static var stub2: User {
-        .init(id: "user2_id", name: "user2")
-    }
-}
-
-extension User {
-
-    func toObject() -> UserObject {
+    func toUser() -> User {
         .init(
             id: id,
               name: name,
