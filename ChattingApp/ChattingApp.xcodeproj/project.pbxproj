@@ -33,6 +33,8 @@
 		AB58AB302C2528AB0070420B /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AB2E2C2528AA0070420B /* SHA256.swift */; };
 		AB58AB312C2528AB0070420B /* RandomNounceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58AB2F2C2528AB0070420B /* RandomNounceString.swift */; };
 		ABF79DDB2C28364E00212DA5 /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF79DDA2C28364E00212DA5 /* MainTabType.swift */; };
+		ABF79DDE2C28372100212DA5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF79DDD2C28372100212DA5 /* HomeViewModel.swift */; };
+		ABF79DE02C28372F00212DA5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF79DDF2C28372F00212DA5 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		AB58AB2E2C2528AA0070420B /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 		AB58AB2F2C2528AB0070420B /* RandomNounceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNounceString.swift; sourceTree = "<group>"; };
 		ABF79DDA2C28364E00212DA5 /* MainTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabType.swift; sourceTree = "<group>"; };
+		ABF79DDD2C28372100212DA5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		ABF79DDF2C28372F00212DA5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,7 @@
 			children = (
 				AB58AAF92C2340990070420B /* Auth */,
 				AB58AB102C2442240070420B /* Login */,
+				ABF79DDC2C28370800212DA5 /* Home */,
 				AB58AB0F2C2442150070420B /* MainTab */,
 			);
 			path = Scene;
@@ -274,6 +279,15 @@
 				AB58AB2E2C2528AA0070420B /* SHA256.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		ABF79DDC2C28370800212DA5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ABF79DDD2C28372100212DA5 /* HomeViewModel.swift */,
+				ABF79DDF2C28372F00212DA5 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF79DDE2C28372100212DA5 /* HomeViewModel.swift in Sources */,
 				AB58AB312C2528AB0070420B /* RandomNounceString.swift in Sources */,
 				AB58AB092C243E260070420B /* AppDelegate.swift in Sources */,
 				AB34167D2C231C4900698844 /* AuthenticatedView.swift in Sources */,
@@ -425,6 +440,7 @@
 				AB58AAFE2C2340E10070420B /* Services.swift in Sources */,
 				AB58AAFB2C2340BF0070420B /* DIContainer.swift in Sources */,
 				AB34167B2C231C4900698844 /* ChattingAppApp.swift in Sources */,
+				ABF79DE02C28372F00212DA5 /* HomeView.swift in Sources */,
 				AB58AB0E2C243F980070420B /* AuthService.swift in Sources */,
 				AB58AB302C2528AB0070420B /* SHA256.swift in Sources */,
 				ABF79DDB2C28364E00212DA5 /* MainTabType.swift in Sources */,

@@ -22,7 +22,7 @@ struct MainTabView: View {
                 Group {
                     switch tab {
                     case .home:
-                        Text("home")
+                        HomeView(viewModel: .init())
                     case .chat:
                         Text("chat")
                     case .phone:
