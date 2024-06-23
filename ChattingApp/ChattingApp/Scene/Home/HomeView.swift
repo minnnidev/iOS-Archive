@@ -67,22 +67,24 @@ struct HomeView: View {
                 emptyView
             } else {
                 Spacer(minLength: 24)
-                ForEach(viewModel.users, id: \.id) { user in
-                    Button {
-                        viewModel.send(.presentOtherProfileView(user.id))
-                    } label: {
-                        HStack {
-                            Image("person")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .clipShape(Circle())
-                            Text(user.name)
-                                .font(.system(size: 11, weight: .bold))
-                                .foregroundStyle(Color.bkText)
-                            Spacer()
+                LazyVStack {
+                    ForEach(viewModel.users, id: \.id) { user in
+                        Button {
+                            viewModel.send(.presentOtherProfileView(user.id))
+                        } label: {
+                            HStack {
+                                Image("person")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                Text(user.name)
+                                    .font(.system(size: 11, weight: .bold))
+                                    .foregroundStyle(Color.bkText)
+                                Spacer()
+                            }
+                            .padding(.horizontal, 30)
+                            .padding(.bottom, 7)
                         }
-                        .padding(.horizontal, 30)
-                        .padding(.bottom, 7)
                     }
                 }
             }
@@ -139,7 +141,7 @@ struct HomeView: View {
             }
 
             Button {
-                // TODO: - 친구 추가
+                viewModel.send(.requestContacts)
             } label: {
                 Text("친구 추가")
                     .font(.system(size: 14))

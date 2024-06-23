@@ -14,6 +14,7 @@ class HomeViewModel: ObservableObject {
         case load
         case presentMyProfileView
         case presentOtherProfileView(String)
+        case requestContacts
     }
 
     @Published var myUser: User?
@@ -50,10 +51,30 @@ class HomeViewModel: ObservableObject {
                     self?.users = users
                 }
                 .store(in: &subscriptions)
+
         case .presentMyProfileView:
             modalDestination = .myProfile
+
         case let .presentOtherProfileView(otherUserId):
             modalDestination = .otherProfile(otherUserId)
+
+        case .requestContacts:
+            container.services.contactService.fetchContacts()
+                .flatMap { users in
+                    self.container.services.userService.addUserAfterContact(users: users)
+                }
+                .flatMap { _ in
+                    self.container.services.userService.loadUsers(userId: self.userId)
+                }
+                .sink { [weak self] completion in
+                    if case .failure = completion {
+                        self?.phase = .failed
+                    }
+                } receiveValue: { [weak self] users in
+                    self?.phase = .successed
+                    self?.users = users
+                }
+                .store(in: &subscriptions)
         }
     }
 }
