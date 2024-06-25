@@ -12,6 +12,8 @@ import FirebaseDatabase
 protocol UserDBRepositoryType {
     func addUser(_ object: UserObject) -> AnyPublisher<Void, DBError>
     func getUser(userId: String) -> AnyPublisher<UserObject, DBError>
+    func getUser(userId: String) async throws -> UserObject
+    func updateUser(userId: String, key: String, value: Any) async throws
     func loadUsers() -> AnyPublisher<[UserObject], DBError>
     func addUserAfterContact(_ objects: [UserObject]) -> AnyPublisher<Void, DBError>
 }
@@ -67,6 +69,17 @@ class UserDBRepository: UserDBRepositoryType {
         .eraseToAnyPublisher()
     }
 
+    func getUser(userId: String) async throws -> UserObject {
+        guard let value = try await self.db.child(DBKey.users).child(userId).getData().value else {
+            throw DBError.emptyValue
+        }
+
+        let data = try JSONSerialization.data(withJSONObject: value)
+        let userObject = try JSONDecoder().decode(UserObject.self, from: data)
+        
+        return userObject
+    }
+
     func loadUsers() -> AnyPublisher<[UserObject], DBError> {
         Future<Any?, DBError> { [weak self] promise in
             self?.db.child(DBKey.users).getData { error, snapshot in
@@ -97,6 +110,10 @@ class UserDBRepository: UserDBRepositoryType {
             }
         }
         .eraseToAnyPublisher()
+    }
+
+    func updateUser(userId: String, key: String, value: Any) async throws {
+        try await self.db.child(DBKey.users).child(userId).child(key).setValue(value)
     }
 
     func addUserAfterContact(_ objects: [UserObject]) -> AnyPublisher<Void, DBError> {

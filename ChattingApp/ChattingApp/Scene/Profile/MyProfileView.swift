@@ -46,6 +46,9 @@ struct MyProfileView: View {
                     }
                 }
             }
+            .task {
+                await viewModel.getUser()
+            }
         }
     }
 
@@ -68,11 +71,18 @@ struct MyProfileView: View {
 
     private var descriptionView: some View {
         Button {
-
+            viewModel.isPresentedDescriptionEditView.toggle()
         } label: {
             Text(viewModel.userInfo?.description ?? "상태 메세지를 입력해 주세요.")
                 .font(.system(size: 14))
                 .foregroundStyle(Color.bgWh)
+        }
+        .sheet(isPresented: $viewModel.isPresentedDescriptionEditView) {
+            MyProfileDescriptionEditView(description: viewModel.userInfo?.description ?? "") { willBeDesc in
+                Task {
+                    await viewModel.updateDescription(description: willBeDesc)
+                }
+            }
         }
     }
 
