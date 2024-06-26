@@ -41,7 +41,11 @@ fileprivate struct ChatRoomCell: View {
     let userId: String
 
     var body: some View {
-        NavigationLink(value: NavigationDestination.chat) {
+        NavigationLink(value: NavigationDestination.chat(
+            chatroomId: chatRoom.chatRoomId,
+            myUserId: userId,
+            otherUserId: chatRoom.otherUserId)
+        ) {
             HStack {
                 Image("person")
                     .resizable()
