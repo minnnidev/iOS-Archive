@@ -30,7 +30,7 @@ struct MainTabView: View {
                             userId: viewModel.userId ?? "")
                         )
                     case .chat:
-                        Text("chat")
+                        ChatListView(viewModel: .init(container: container, userId: viewModel.userId ?? ""))
                     case .phone:
                         Text("Phone")
                     }
