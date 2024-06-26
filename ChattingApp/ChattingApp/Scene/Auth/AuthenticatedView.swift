@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AuthenticatedView: View {
     @StateObject var authViewModel: AuthenticationViewModel
+    @StateObject var navigationRouter: NavigationRouter
 
     var body: some View {
         Group {
@@ -19,6 +20,7 @@ struct AuthenticatedView: View {
             case .authenticated:
                 MainTabView()
                     .environmentObject(authViewModel)
+                    .environmentObject(navigationRouter)
             }
         }
         .onAppear {
@@ -28,5 +30,5 @@ struct AuthenticatedView: View {
 }
 
 #Preview {
-    AuthenticatedView(authViewModel: AuthenticationViewModel(container: .init(services: StubServices())))
+    AuthenticatedView(authViewModel: AuthenticationViewModel(container: .init(services: StubServices())), navigationRouter: .init())
 }
