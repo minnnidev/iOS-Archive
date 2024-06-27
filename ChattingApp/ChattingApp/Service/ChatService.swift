@@ -10,6 +10,7 @@ import Combine
 
 protocol ChatServiceType {
     func addChat(_ chat: Chat, to chatRoomId: String) -> AnyPublisher<Chat, ServiceError>
+    func observeChat(chatRoomId: String) -> AnyPublisher<Chat?, Never>
 }
 
 class ChatService: ChatServiceType {
@@ -29,11 +30,22 @@ class ChatService: ChatServiceType {
             .mapError { ServiceError.error($0) }
             .eraseToAnyPublisher()
     }
+
+    func observeChat(chatRoomId: String) -> AnyPublisher<Chat?, Never> {
+        dBRepository.observeChat(chatRoomId: chatRoomId)
+            .map { $0?.toChat() }
+            .replaceError(with: nil)
+            .eraseToAnyPublisher()
+    }
 }
 
 class StubChatService: ChatServiceType {
 
     func addChat(_ chat: Chat, to chatRoomId: String) -> AnyPublisher<Chat, ServiceError> {
+        Empty().eraseToAnyPublisher()
+    }
+
+    func observeChat(chatRoomId: String) -> AnyPublisher<Chat?, Never> {
         Empty().eraseToAnyPublisher()
     }
 }
