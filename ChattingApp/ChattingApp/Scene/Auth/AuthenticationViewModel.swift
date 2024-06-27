@@ -22,6 +22,8 @@ class AuthenticationViewModel: ObservableObject {
         case appleLogin(ASAuthorizationAppleIDRequest)
         case appleLoginCompletion(Result<ASAuthorization, Error>)
         case logout
+        case requestPushNotification
+        case setFcmToken
     }
 
     @Published var authenticationState: AuthenticationState = .unauthenticated
@@ -101,6 +103,26 @@ class AuthenticationViewModel: ObservableObject {
                     self?.userId = nil
                 }
                 .store(in: &subscriptions)
+
+        case .requestPushNotification:
+            container.services.pushNotificationService.requestAuthorization { [weak self] granted in
+                guard granted else { return }
+                self?.send(action: .setFcmToken)
+            }
+        case .setFcmToken:
+            container.services.pushNotificationService.fcmToken
+                .compactMap { $0 }
+                .flatMap { fcmToken -> AnyPublisher<Void, Never> in
+                    guard let userId = self.userId else { return Empty().eraseToAnyPublisher() }
+
+                    return self.container.services.userService.updateUserFcmToken(userId: userId, fcmToken: fcmToken)
+                        .replaceError(with: ())
+                        .eraseToAnyPublisher()
+                }
+                .sink { _ in
+                }
+                .store(in: &subscriptions)
+            return
         }
     }
 }

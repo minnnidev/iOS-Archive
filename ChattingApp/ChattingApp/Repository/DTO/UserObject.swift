@@ -13,6 +13,7 @@ struct UserObject: Codable {
     var phoneNumber: String?
     var imageURL: String?
     var description: String?
+    var fcmToken: String?
 }
 
 extension UserObject {
@@ -20,10 +21,11 @@ extension UserObject {
     func toUser() -> User {
         .init(
             id: id,
-              name: name,
-              phoneNumber: phoneNumber,
-              imageURL: imageURL,
-              description: description
+            name: name,
+            phoneNumber: phoneNumber,
+            imageURL: imageURL,
+            description: description,
+            fcmToken: fcmToken
         )
     }
 }
