@@ -17,6 +17,7 @@ protocol UserServiceType {
     func updateUserFcmToken(userId: String, fcmToken: String) -> AnyPublisher<Void, ServiceError>
     func loadUsers(userId: String) -> AnyPublisher<[User], ServiceError>
     func addUserAfterContact(users: [User]) -> AnyPublisher<Void, ServiceError>
+    func filterUsers(with queryString: String, userId: String) -> AnyPublisher<[User], ServiceError>
 }
 
 class UserService: UserServiceType {
@@ -78,6 +79,13 @@ class UserService: UserServiceType {
             .mapError { .error($0) }
             .eraseToAnyPublisher()
     }
+
+    func filterUsers(with queryString: String, userId: String) -> AnyPublisher<[User], ServiceError> {
+        dbRepository.filterUsers(with: queryString)
+            .map { $0.map { $0.toUser() }.filter { $0.id != userId } }
+            .mapError { .error($0) }
+            .eraseToAnyPublisher()
+    }
 }
 
 class StubUserService: UserServiceType {
@@ -117,5 +125,11 @@ class StubUserService: UserServiceType {
 
     func addUserAfterContact(users: [User]) -> AnyPublisher<Void, ServiceError> {
         Empty().eraseToAnyPublisher()
+    }
+
+    func filterUsers(with queryString: String, userId: String) -> AnyPublisher<[User], ServiceError> {
+        Just([User.stub1, User.stub2])
+            .setFailureType(to: ServiceError.self)
+            .eraseToAnyPublisher()
     }
 }
