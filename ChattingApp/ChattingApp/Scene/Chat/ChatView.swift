@@ -70,12 +70,17 @@ struct ChatView: View {
                     .cornerRadius(20)
 
                 Button {
-
+                    viewModel.send(action: .addChat(viewModel.message))
+                    isFocused = false
                 } label: {
                     Image("send")
                 }
+                .disabled(viewModel.message.isEmpty)
             }
             .padding(.horizontal, 27)
+        }
+        .onAppear {
+            viewModel.send(action: .load)
         }
     }
 

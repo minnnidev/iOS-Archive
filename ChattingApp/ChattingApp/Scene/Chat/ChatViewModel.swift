@@ -11,7 +11,8 @@ import Combine
 class ChatViewModel: ObservableObject {
 
     enum Action {
-
+        case load
+        case addChat(String)
     }
 
     @Published var chatDataList: [ChatData] = []
@@ -49,6 +50,28 @@ class ChatViewModel: ObservableObject {
     }
 
     func send(action: Action) {
-        
+        switch action {
+        case .load:
+            Publishers.Zip(
+                container.services.userService.getUser(userId: myUserId),
+                container.services.userService.getUser(userId: otherUserId)
+            )
+            .sink { completion in
+                // TODO: 
+            } receiveValue: { [weak self] myUser, otherUser in
+                self?.myUser = myUser
+                self?.otherUser = otherUser
+            }
+            .store(in: &subscriptions)
+        case let .addChat(message):
+            let chat: Chat = .init(chatId: UUID().uuidString, userId: myUserId, message: message, date: Date())
+            container.services.chatService.addChat(chat, to: chatRoomId)
+                .sink { completion in
+
+                } receiveValue: { [weak self] _ in
+                    self?.message = ""
+                }
+                .store(in: &subscriptions)
+        }
     }
 }

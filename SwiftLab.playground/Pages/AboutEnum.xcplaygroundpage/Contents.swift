@@ -10,5 +10,5 @@ enum Developer: Int {
 }
 
 let developer2 = Developer(rawValue: 5)
-print(developer) // nil
+print(developer2) // nil
 // Optional(__lldb_expr_28.Developer.server)
