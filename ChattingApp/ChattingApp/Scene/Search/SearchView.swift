@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
+    @Environment(\.managedObjectContext) var objectContext
     @EnvironmentObject var navigationRouter: NavigationRouter
     @StateObject var viewModel: SearchViewModel
 
@@ -15,22 +16,26 @@ struct SearchView: View {
         VStack {
             topView
 
-            List {
-                ForEach(viewModel.searchedUsersResult) { result in
-                    HStack(spacing: 5) {
-                        URLImageView(urlString: result.imageURL)
-                            .frame(width: 26, height: 26)
-                            .clipShape(Circle())
-                        Text(result.name)
-                            .font(.system(size: 14, weight: .bold))
-                            .foregroundStyle(Color.bkText)
+            if viewModel.searchedUsersResult.isEmpty {
+                RecentSearchView()
+            } else {
+                List {
+                    ForEach(viewModel.searchedUsersResult) { result in
+                        HStack(spacing: 5) {
+                            URLImageView(urlString: result.imageURL)
+                                .frame(width: 26, height: 26)
+                                .clipShape(Circle())
+                            Text(result.name)
+                                .font(.system(size: 14, weight: .bold))
+                                .foregroundStyle(Color.bkText)
+                        }
                     }
+                    .listRowInsets(.init())
+                    .listRowSeparator(.hidden)
+                    .padding(.horizontal, 30)
                 }
-                .listRowInsets(.init())
-                .listRowSeparator(.hidden)
-                .padding(.horizontal, 30)
+                .listStyle(.plain)
             }
-            .listStyle(.plain)
         }
         .toolbar(.hidden, for: .navigationBar)
         .toolbar(.hidden, for: .tabBar)
@@ -44,8 +49,10 @@ struct SearchView: View {
                 Image("back_search")
             }
 
-            SearchBar(text: $viewModel.searchText, 
-                      shouldBecomeFirstResponder: $viewModel.shouldBecomeFirstResponder)
+            SearchBar(text: $viewModel.searchText,
+                      shouldBecomeFirstResponder: $viewModel.shouldBecomeFirstResponder) {
+                setSearchedResultWithContext()
+            }
 
             Button {
                 viewModel.send(action: .clearSearchText)
@@ -54,6 +61,16 @@ struct SearchView: View {
             }
         }
         .padding(.horizontal, 20)
+    }
+
+    private func setSearchedResultWithContext() {
+        let result = SearchResult(context: objectContext)
+
+        result.id = UUID().uuidString
+        result.name = viewModel.searchText
+        result.date = Date()
+
+        try? objectContext.save()
     }
 }
 

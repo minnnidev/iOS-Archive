@@ -62,7 +62,6 @@ class SearchViewModel: ObservableObject {
         case .clearSearchText:
             searchText = ""
             shouldBecomeFirstResponder = false
-//            searchedUsersResult = []
         }
     }
 }

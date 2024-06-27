@@ -10,6 +10,7 @@ import SwiftUI
 struct AuthenticatedView: View {
     @StateObject var authViewModel: AuthenticationViewModel
     @StateObject var navigationRouter: NavigationRouter
+    @StateObject var searchDataController: SearchDataController
 
     var body: some View {
         Group {
@@ -19,6 +20,7 @@ struct AuthenticatedView: View {
                     .environmentObject(authViewModel)
             case .authenticated:
                 MainTabView()
+                    .environment(\.managedObjectContext, searchDataController.persistantContainer.viewContext)
                     .environmentObject(authViewModel)
                     .environmentObject(navigationRouter)
                     .onAppear {
@@ -33,5 +35,9 @@ struct AuthenticatedView: View {
 }
 
 #Preview {
-    AuthenticatedView(authViewModel: AuthenticationViewModel(container: .init(services: StubServices())), navigationRouter: .init())
+    AuthenticatedView(authViewModel: AuthenticationViewModel(
+        container: .init(services: StubServices())),
+                      navigationRouter: .init(),
+                      searchDataController: .init()
+    )
 }

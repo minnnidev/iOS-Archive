@@ -15,6 +15,9 @@
 		AB0BB6552C2DAB9200352256 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB6542C2DAB9200352256 /* PushNotificationService.swift */; };
 		AB0BB6572C2DBE4E00352256 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB6562C2DBE4E00352256 /* SearchViewModel.swift */; };
 		AB0BB6592C2DC11F00352256 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB6582C2DC11F00352256 /* SearchBar.swift */; };
+		AB0BB65C2C2DD0FC00352256 /* Search.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB65A2C2DD0FC00352256 /* Search.xcdatamodeld */; };
+		AB0BB65F2C2DD15800352256 /* SearchDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB65E2C2DD15800352256 /* SearchDataController.swift */; };
+		AB0BB6612C2DD25800352256 /* RecentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB6602C2DD25800352256 /* RecentSearchView.swift */; };
 		AB34167B2C231C4900698844 /* ChattingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB34167A2C231C4900698844 /* ChattingAppApp.swift */; };
 		AB34167D2C231C4900698844 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB34167C2C231C4900698844 /* AuthenticatedView.swift */; };
 		AB3416822C231C4A00698844 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3416812C231C4A00698844 /* Preview Assets.xcassets */; };
@@ -121,6 +124,9 @@
 		AB0BB6542C2DAB9200352256 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
 		AB0BB6562C2DBE4E00352256 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		AB0BB6582C2DC11F00352256 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		AB0BB65B2C2DD0FC00352256 /* Search.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Search.xcdatamodel; sourceTree = "<group>"; };
+		AB0BB65E2C2DD15800352256 /* SearchDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataController.swift; sourceTree = "<group>"; };
+		AB0BB6602C2DD25800352256 /* RecentSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchView.swift; sourceTree = "<group>"; };
 		AB3416772C231C4900698844 /* ChattingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChattingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB34167A2C231C4900698844 /* ChattingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingAppApp.swift; sourceTree = "<group>"; };
 		AB34167C2C231C4900698844 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -245,6 +251,14 @@
 			path = SubView;
 			sourceTree = "<group>";
 		};
+		AB0BB65D2C2DD14A00352256 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BB65E2C2DD15800352256 /* SearchDataController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		AB34166E2C231C4900698844 = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +354,7 @@
 				AB48E8C02C2C078E001B8CB9 /* SearchView.swift */,
 				AB0BB6562C2DBE4E00352256 /* SearchViewModel.swift */,
 				AB0BB6582C2DC11F00352256 /* SearchBar.swift */,
+				AB0BB6602C2DD25800352256 /* RecentSearchView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -350,6 +365,7 @@
 				ABE8644F2C2AE57C00904AA9 /* Assets.xcassets */,
 				AB58AAF32C233EB30070420B /* Colors.xcassets */,
 				AB58AAF12C233E430070420B /* LaunchScreen.storyboard */,
+				AB0BB65A2C2DD0FC00352256 /* Search.xcdatamodeld */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -366,6 +382,7 @@
 		AB58AAF72C233F9E0070420B /* General */ = {
 			isa = PBXGroup;
 			children = (
+				AB0BB65D2C2DD14A00352256 /* Search */,
 				AB48E8B72C2C05EB001B8CB9 /* Navigation */,
 				ABF79DF32C285C4A00212DA5 /* View */,
 				AB58AAFA2C2340BF0070420B /* DIContainer.swift */,
@@ -769,6 +786,7 @@
 				AB58AB002C23415F0070420B /* AuthenticationViewModel.swift in Sources */,
 				ABF79E022C28693500212DA5 /* ContactService.swift in Sources */,
 				AB0BB6492C2D6EC600352256 /* ChatObject.swift in Sources */,
+				AB0BB65F2C2DD15800352256 /* SearchDataController.swift in Sources */,
 				ABF79DF92C285CE100212DA5 /* ErrorView.swift in Sources */,
 				AB48E8B62C2C01FD001B8CB9 /* ChatRoom.swift in Sources */,
 				AB685A902C2BE73A009DF6B3 /* ImageCacheService.swift in Sources */,
@@ -785,6 +803,7 @@
 				ABF79DFE2C285E6600212DA5 /* MyProfileView.swift in Sources */,
 				AB48E8D72C2C5472001B8CB9 /* KeyboardToolbar.swift in Sources */,
 				AB58AB302C2528AB0070420B /* SHA256.swift in Sources */,
+				AB0BB65C2C2DD0FC00352256 /* Search.xcdatamodeld in Sources */,
 				ABF79E002C285E7100212DA5 /* OtherProfileView.swift in Sources */,
 				AB48E8AE2C2BFDF7001B8CB9 /* ChatRoomDBRepository.swift in Sources */,
 				ABF79DDB2C28364E00212DA5 /* MainTabType.swift in Sources */,
@@ -801,6 +820,7 @@
 				ABE864522C2AF1F200904AA9 /* MyProfileViewModel.swift in Sources */,
 				AB58AB162C2442C40070420B /* LoginView.swift in Sources */,
 				ABE864542C2B150500904AA9 /* MyProfileMenuType.swift in Sources */,
+				AB0BB6612C2DD25800352256 /* RecentSearchView.swift in Sources */,
 				AB48E8C92C2C0EF1001B8CB9 /* NavigationRoutingView.swift in Sources */,
 				ABF79DF52C285C5800212DA5 /* PlaceholderView.swift in Sources */,
 				AB0BB6472C2D6E7A00352256 /* ChatDBRepository.swift in Sources */,
@@ -1214,6 +1234,20 @@
 			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		AB0BB65A2C2DD0FC00352256 /* Search.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AB0BB65B2C2DD0FC00352256 /* Search.xcdatamodel */,
+			);
+			currentVersion = AB0BB65B2C2DD0FC00352256 /* Search.xcdatamodel */;
+			name = Search.xcdatamodeld;
+			path = "/Users/gimmin/Desktop/깃헙/iOS-Playground/ChattingApp/ChattingApp/Resource/Search.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AB34166F2C231C4900698844 /* Project object */;
 }

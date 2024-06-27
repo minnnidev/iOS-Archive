@@ -15,9 +15,12 @@ struct ChattingAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AuthenticatedView(authViewModel: .init(container: container), 
-                              navigationRouter: .init())
-                .environmentObject(container)
+            AuthenticatedView(
+                authViewModel: .init(container: container), 
+                navigationRouter: .init(), 
+                searchDataController: .init()
+            )
+            .environmentObject(container)
         }
     }
 }
