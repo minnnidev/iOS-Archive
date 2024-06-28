@@ -18,6 +18,11 @@
 		AB0BB65C2C2DD0FC00352256 /* Search.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB65A2C2DD0FC00352256 /* Search.xcdatamodeld */; };
 		AB0BB65F2C2DD15800352256 /* SearchDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB65E2C2DD15800352256 /* SearchDataController.swift */; };
 		AB0BB6612C2DD25800352256 /* RecentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB6602C2DD25800352256 /* RecentSearchView.swift */; };
+		AB0BB66F2C2E51E400352256 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB66E2C2E51E400352256 /* SettingView.swift */; };
+		AB0BB6712C2E51F500352256 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB6702C2E51F500352256 /* SettingViewModel.swift */; };
+		AB0BB6742C2E539200352256 /* AppearanceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB6732C2E539200352256 /* AppearanceType.swift */; };
+		AB0BB6762C2E53DE00352256 /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB6752C2E53DE00352256 /* SettingItem.swift */; };
+		AB0BB6782C2E572700352256 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BB6772C2E572700352256 /* AppearanceController.swift */; };
 		AB34167B2C231C4900698844 /* ChattingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB34167A2C231C4900698844 /* ChattingAppApp.swift */; };
 		AB34167D2C231C4900698844 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB34167C2C231C4900698844 /* AuthenticatedView.swift */; };
 		AB3416822C231C4A00698844 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3416812C231C4A00698844 /* Preview Assets.xcassets */; };
@@ -127,6 +132,11 @@
 		AB0BB65B2C2DD0FC00352256 /* Search.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Search.xcdatamodel; sourceTree = "<group>"; };
 		AB0BB65E2C2DD15800352256 /* SearchDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataController.swift; sourceTree = "<group>"; };
 		AB0BB6602C2DD25800352256 /* RecentSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchView.swift; sourceTree = "<group>"; };
+		AB0BB66E2C2E51E400352256 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		AB0BB6702C2E51F500352256 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		AB0BB6732C2E539200352256 /* AppearanceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceType.swift; sourceTree = "<group>"; };
+		AB0BB6752C2E53DE00352256 /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
+		AB0BB6772C2E572700352256 /* AppearanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
 		AB3416772C231C4900698844 /* ChattingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChattingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB34167A2C231C4900698844 /* ChattingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingAppApp.swift; sourceTree = "<group>"; };
 		AB34167C2C231C4900698844 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -259,6 +269,25 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		AB0BB66D2C2E51D100352256 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BB66E2C2E51E400352256 /* SettingView.swift */,
+				AB0BB6702C2E51F500352256 /* SettingViewModel.swift */,
+				AB0BB6752C2E53DE00352256 /* SettingItem.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		AB0BB6722C2E538200352256 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				AB0BB6732C2E539200352256 /* AppearanceType.swift */,
+				AB0BB6772C2E572700352256 /* AppearanceController.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
 		AB34166E2C231C4900698844 = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +411,7 @@
 		AB58AAF72C233F9E0070420B /* General */ = {
 			isa = PBXGroup;
 			children = (
+				AB0BB6722C2E538200352256 /* Appearance */,
 				AB0BB65D2C2DD14A00352256 /* Search */,
 				AB48E8B72C2C05EB001B8CB9 /* Navigation */,
 				ABF79DF32C285C4A00212DA5 /* View */,
@@ -403,6 +433,7 @@
 				ABF79DFC2C285E5900212DA5 /* Profile */,
 				AB48E8BC2C2C0775001B8CB9 /* Chat */,
 				AB48E8BD2C2C077C001B8CB9 /* Search */,
+				AB0BB66D2C2E51D100352256 /* Setting */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -779,6 +810,7 @@
 				ABE8645B2C2B21DA00904AA9 /* PhotoImage.swift in Sources */,
 				AB685A9E2C2BFAFA009DF6B3 /* OtherProfileViewModel.swift in Sources */,
 				AB34167D2C231C4900698844 /* AuthenticatedView.swift in Sources */,
+				AB0BB66F2C2E51E400352256 /* SettingView.swift in Sources */,
 				ABF79DFB2C285DD200212DA5 /* HomeModalDestination.swift in Sources */,
 				AB58AB142C2442420070420B /* MainTabView.swift in Sources */,
 				AB0BB64E2C2D7EEC00352256 /* ChatImageItemView.swift in Sources */,
@@ -793,6 +825,7 @@
 				AB58AAFE2C2340E10070420B /* Services.swift in Sources */,
 				AB685A9A2C2BEFD1009DF6B3 /* URLImageViewModel.swift in Sources */,
 				AB58AAFB2C2340BF0070420B /* DIContainer.swift in Sources */,
+				AB0BB6762C2E53DE00352256 /* SettingItem.swift in Sources */,
 				AB685A952C2BE8A6009DF6B3 /* DiskStorage.swift in Sources */,
 				AB48E8B02C2BFE45001B8CB9 /* ChatRoomObject.swift in Sources */,
 				AB34167B2C231C4900698844 /* ChattingAppApp.swift in Sources */,
@@ -807,6 +840,7 @@
 				ABF79E002C285E7100212DA5 /* OtherProfileView.swift in Sources */,
 				AB48E8AE2C2BFDF7001B8CB9 /* ChatRoomDBRepository.swift in Sources */,
 				ABF79DDB2C28364E00212DA5 /* MainTabType.swift in Sources */,
+				AB0BB6782C2E572700352256 /* AppearanceController.swift in Sources */,
 				ABE864652C2B24A700904AA9 /* UploadProvider.swift in Sources */,
 				AB58AB212C244B1E0070420B /* ServiceError.swift in Sources */,
 				ABE864672C2B258C00904AA9 /* UploadService.swift in Sources */,
@@ -823,6 +857,7 @@
 				AB0BB6612C2DD25800352256 /* RecentSearchView.swift in Sources */,
 				AB48E8C92C2C0EF1001B8CB9 /* NavigationRoutingView.swift in Sources */,
 				ABF79DF52C285C5800212DA5 /* PlaceholderView.swift in Sources */,
+				AB0BB6712C2E51F500352256 /* SettingViewModel.swift in Sources */,
 				AB0BB6472C2D6E7A00352256 /* ChatDBRepository.swift in Sources */,
 				ABF79DE82C2843B600212DA5 /* UserService.swift in Sources */,
 				AB48E8D52C2C3EA2001B8CB9 /* ChatItemDirection.swift in Sources */,
@@ -840,6 +875,7 @@
 				AB48E8B92C2C05F8001B8CB9 /* NavigationDestination.swift in Sources */,
 				AB0BB64B2C2D703F00352256 /* ChatService.swift in Sources */,
 				AB48E8CD2C2C3A17001B8CB9 /* Chat.swift in Sources */,
+				AB0BB6742C2E539200352256 /* AppearanceType.swift in Sources */,
 				AB48E8C32C2C0CB6001B8CB9 /* ChatListView.swift in Sources */,
 				ABF79DEB2C2844A800212DA5 /* UserObject.swift in Sources */,
 				ABF79DF22C285B6900212DA5 /* Phase.swift in Sources */,

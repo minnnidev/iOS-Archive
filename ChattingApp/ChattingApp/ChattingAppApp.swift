@@ -11,6 +11,7 @@ import FirebaseCore
 @main
 struct ChattingAppApp: App {
     @StateObject private var container: DIContainer = .init(services: Services())
+    @AppStorage(AppStorageType.appearance) var appearanceValue: Int = UserDefaults.standard.integer(forKey: AppStorageType.appearance)
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
     var body: some Scene {
@@ -18,7 +19,8 @@ struct ChattingAppApp: App {
             AuthenticatedView(
                 authViewModel: .init(container: container), 
                 navigationRouter: .init(), 
-                searchDataController: .init()
+                searchDataController: .init(),
+                appearanceController: .init(appearanceValue)
             )
             .environmentObject(container)
         }

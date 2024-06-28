@@ -11,6 +11,7 @@ struct AuthenticatedView: View {
     @StateObject var authViewModel: AuthenticationViewModel
     @StateObject var navigationRouter: NavigationRouter
     @StateObject var searchDataController: SearchDataController
+    @StateObject var appearanceController: AppearanceController
 
     var body: some View {
         Group {
@@ -23,6 +24,7 @@ struct AuthenticatedView: View {
                     .environment(\.managedObjectContext, searchDataController.persistantContainer.viewContext)
                     .environmentObject(authViewModel)
                     .environmentObject(navigationRouter)
+                    .environmentObject(appearanceController)
                     .onAppear {
                         authViewModel.send(action: .requestPushNotification)
                     }
@@ -31,6 +33,7 @@ struct AuthenticatedView: View {
         .onAppear {
             authViewModel.send(action: .checkAuthenticationState)
         }
+        .preferredColorScheme(appearanceController.appearance.colorScheme)
     }
 }
 
@@ -38,6 +41,7 @@ struct AuthenticatedView: View {
     AuthenticatedView(authViewModel: AuthenticationViewModel(
         container: .init(services: StubServices())),
                       navigationRouter: .init(),
-                      searchDataController: .init()
+                      searchDataController: .init(), 
+                      appearanceController: .init(.init(0))
     )
 }

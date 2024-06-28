@@ -24,6 +24,8 @@ struct HomeView: View {
                         OtherProfileView(viewModel: .init(container: container, userId: userId)) { otherUserInfo in
                             viewModel.send(.goToChat(otherUserInfo))
                         }
+                    case .setting:
+                        SettingView(viewModel: .init())
                     }
                 }
                 .navigationDestination(for: NavigationDestination.self) {
@@ -46,7 +48,7 @@ struct HomeView: View {
             loadedView
                 .toolbar {
                     Button {
-                        // TODO: setting action
+                        viewModel.send(.presentSettingView)
                     } label: {
                         Image("settings")
                     }

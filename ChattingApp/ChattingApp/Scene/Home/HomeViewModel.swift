@@ -14,6 +14,7 @@ class HomeViewModel: ObservableObject {
         case load
         case presentMyProfileView
         case presentOtherProfileView(String)
+        case presentSettingView
         case requestContacts
         case goToChat(User)
     }
@@ -97,6 +98,9 @@ class HomeViewModel: ObservableObject {
                 )
             }
             .store(in: &subscriptions)
+
+        case .presentSettingView:
+            modalDestination = .setting
         }
     }
 }
