@@ -2,11 +2,10 @@
 //  ChattingAppTests.swift
 //  ChattingAppTests
 //
-//  Created by 김민 on 6/19/24.
+//  Created by 김민 on 6/28/24.
 //
 
 import XCTest
-@testable import ChattingApp
 
 final class ChattingAppTests: XCTestCase {
 
@@ -28,7 +27,7 @@ final class ChattingAppTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
