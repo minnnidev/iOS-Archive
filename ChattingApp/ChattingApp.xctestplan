@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "1E4C41FB-7EB4-4A47-BE9A-633EB56A9420",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ChattingApp.xcodeproj",
+      "identifier" : "AB3416762C231C4900698844",
+      "name" : "ChattingApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ChattingApp.xcodeproj",
+        "identifier" : "AB9F07872C2E7B050091D792",
+        "name" : "ChattingAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}

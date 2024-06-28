@@ -17,7 +17,8 @@ class DIContainer: ObservableObject {
         services: ServiceType,
         dataController: DataControllable = SearchDataController(),
         navigationRouter: NavigationRoutable & ObservableObjectSettable = NavigationRouter(),
-        appearanceController: AppearanceControllerType & ObservableObjectSettable = AppearanceController()
+        appearanceController: AppearanceControllerType & ObservableObjectSettable
+        = AppearanceController()
     ) {
         self.services = services
         self.dataController = dataController
@@ -26,5 +27,12 @@ class DIContainer: ObservableObject {
 
         self.navigationRouter.setObjectWillChange(objectWillChange)
         self.appearanceController.setObjectWillChange(objectWillChange)
+    }
+}
+
+extension DIContainer {
+
+    static var stub: DIContainer {
+        .init(services: StubServices())
     }
 }
