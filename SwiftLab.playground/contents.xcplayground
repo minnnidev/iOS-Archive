@@ -23,5 +23,6 @@
         <page name='MethodDispatch'/>
         <page name='ErrorHandling'/>
         <page name='AboutEnum'/>
+        <page name='DI'/>
     </pages>
 </playground>
