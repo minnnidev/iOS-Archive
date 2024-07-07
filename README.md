@@ -1,10 +1,12 @@
 # 🍎 iOS 개발을 연습하는 공간
+디렉토리별로 설명과 링크를 확인할 수 있습니다. 😄
 
 </br>
 
 ### [🔗 AppleLoginSample](https://velog.io/@minnnidev/iOSSwift-Apple-Login-with-SwiftUI)
 AppleLogin 구현하기 </br>
 w/ SwiftUI </br>
+
 
 ### ChattingApp
 Firebase를 통한 Chatting 기능 구현해 보기 </br>
