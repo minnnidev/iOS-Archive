@@ -7,7 +7,6 @@
 AppleLogin 구현하기 </br>
 w/ SwiftUI </br>
 
-
 ### ChattingApp
 Firebase를 통한 Chatting 기능 구현해 보기 </br>
 w/ SwiftUI, MVVM </br>
@@ -27,6 +26,7 @@ w/ UIKit </br>
 
 ### [🔗 SwiftLab](https://velog.io/@minnnidev/posts?tag=%EB%AC%B8%EB%B2%95)
 Swift의 다양한 문법을 이해하기 위한 예제 모음 </br> 
+링크된 블로그에서 태그 #문법으로 문법 포스팅 확인 가능 </br> 
 
 ### SwiftUI-NaivgationStack
 SwiftUI에서 iOS 16부터 사용할 수 있는 NavigationStack 사용해 보기 </br>
